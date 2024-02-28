@@ -1,0 +1,72 @@
+/* author: https://codepen.io/akm2/pen/RwQXLdP
+Akimitsu Hamamuro
+ */
+.container {
+    position: relative;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+body {
+    font-family: 'Century Gothic', sans-serif;
+    background-color: hsl(256, 100%, 5%);
+    overflow: hidden;
+    margin: 0; /* Убедитесь, что у body нет отступов */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white; /* Цвет текста */
+    position: absolute;
+    padding-top: 32px;
+    width: 100%;
+    z-index: 2; /* Убеждаемся, что заголовок находится поверх холста */
+}
+
+nav {
+    padding: 10px;
+    list-style: none; /* Убираем стандартные маркеры списка */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Выстраиваем элементы в строку */
+    margin-right: 50px; /* Внешний отступ между элементами */
+}
+
+nav a {
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    color: white; /* Цвет текста */
+    font-weight: bold; /* Жирный текст */
+    font-size: 20px; /* Размер текста */
+    transition: color 0.3s ease; /* Плавный переход цвета текста */
+}
+
+nav a:hover {
+    color: #66c2ff; /* Цвет текста при наведении */
+}
+
+.logo {
+    margin: 0 200px 0 80px;
+    font-size: 35px; /* Установите размер текста для логотипа */
+    font-weight: bold;
+}
+
+.list {
+    list-style: none; /* Убираем стандартные маркеры списка */
+    display: flex;
+}
+
+.list li {
+    padding: 5px;
+    margin: 0 45px 0 0;
+}
+
+.list li:last-child{
+    border-radius: 50px;
+    border: 3px solid #fff;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/css/sign.css" />
+  </head>
+  <body>
+    <div class="all">
+      <div class="content">
+        <header>
+          <div class="logo">Космический музей</div>
+          <nav>
+            <ul class="list">
+              <li><a href="main">Главная</a></li>
+              <li><a href="discover">Информация</a></li>
+              <li><a href="about">О нас</a></li>
+              <li><a href="quiz">Викторина</a></li>
+            </ul>
+          </nav>
+        </header>
+        <main class="main">
+          <div class="two">
+            <div class="elems">
+              <div class="login">
+                <div class="text">Вход в аккаунт</div>
+                <div class="vvod">
+                  <form action="#" method="get" enctype="multipart/form-data">
+                    <p class="tekst">Email</p>
+                    <input
+                      tabindex="1"
+                      type="email"
+                      id = "email1"
+                      name="mail"
+                      value=""
+                      class="vvod-items"
+                    />
+                    <p class="tekst">Пароль</p>
+                    <input
+                      tabindex="2"
+                      type="text"
+                      id ="password1"
+                      name="pass"
+                      value=""
+                      class="vvod-items"
+                    />
+                    <div class="batton">
+                      <button class="button-login" type="button" onclick="login()"><a href="#">Войти</a></button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="sign">
+                <div class="text">Регистрация</div>
+                <div class="vvod">
+                  <form action="#" method="get" enctype="multipart/form-data">
+                    <p class="tekst">Логин</p>
+                    <input
+                      tabindex="1"
+                      id = "login"
+                      type="text"
+                      value=""
+                      class="vvod-items"
+                    />
+                    <p class="tekst">Email</p>
+                    <input
+                      tabindex="2"
+                      id ="email2"
+                      type="text"
+                      name="mail"
+                      value=""
+                      class="vvod-items"
+                    />
+                    <p class="tekst">Пароль</p>
+                    <input
+                      tabindex="3"
+                      id ="password2"
+                      type="text"
+                      value=""
+                      class="vvod-items"
+                    />
+                    <p class="tekst">Повторите пароль</p>
+                    <input
+                      tabindex="4"
+                      id ="confirmPassword"
+                      type="text"
+                      value=""
+                      class="vvod-items"
+                    />
+                    <div class="batton">
+                      <button class="button-sign" onclick="register()"><a href="#">Регистрация</a></button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <footer class="footer">
+          <div class="ft">
+            <p>&copy; 2023 Космический музей | by Sanpakuu</p>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+  <script src="/javascript/firebase-config.js"></script>
+  <script src="/javascript/auth.js"></script>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <link rel="stylesheet" href="/css/quiz.css" />
+    <link rel="stylesheet" href="/css/loader.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">Космический музей</div>
+      <nav>
+        <ul class="list">
+          <li><a href="main">Главная</a></li>
+          <li><a href="discover">Информация</a></li>
+          <li><a href="about">О нас</a></li>
+          <li><a href="#">Викторина</a></li>
+          <li><a href="#" onclick="check_on_sign()">Профиль</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="loader-container" style="display: none;">
+      <div id="loader" class="lds-roller" style="display: none">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <section class="quiz">
+      <div class="quest">
+        <div class="container">
+          <div class="quiz-buttons" style="display: none">
+            <button class="quiz-button" data-quiz="1">Викторина 1</button>
+            <button class="quiz-button" data-quiz="2">Викторина 2</button>
+            <button class="quiz-button" data-quiz="3">Викторина 3</button>
+            <button class="quiz-button" data-quiz="4">Викторина 4</button>
+          </div>
+          <div class="quiz-content" style="display: none">
+            <div class="question">
+              <h1 class="question_number">
+                
+              </h1>
+            </div>
+            <div class="container-options-btn">
+              <div class="options">
+                <button class="option_button"></button>
+                <button class="option_button"></button>
+                <button class="option_button"></button>
+                <button class="option_button"></button>
+              </div>
+              <div class="btn_answer">
+                <div class="numbers">
+                  <button class="numb">01</button>
+                  <button class="numb">02</button>
+                  <button class="numb">03</button>
+                  <button class="numb">04</button>
+                  <button class="numb">05</button>
+                  <button class="numb">06</button>
+                  <button class="numb">07</button>
+                  <button class="numb">08</button>
+                  <button class="numb">09</button>
+                  <button class="numb">10</button>
+                </div>
+                <button class="btn_submit">Submit</button>
+              </div>
+            </div>
+          </div>
+          <div class="quiz-info">
+            <div class="quiz-login">Для прохождения викторин войдите в аккаунт</div>
+            <div class="img-user"></div>
+            <button class="button-auth" onclick="navigateToSign()">Авторизация</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+  <script src="/javascript/quiz.js"></script>
+  <script src="/javascript/check_on_sign.js"></script>
+</html>

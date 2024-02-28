@@ -1,0 +1,262 @@
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*, *:before, *:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus, :active{outline: none;}
+a:focus, a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html, body{
+	height: 100%;
+	width: 100%;
+	font-style: 100%;
+	line-height: 1;
+	font-style: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea{font-family: inherit;}
+
+input::-ms-clear{display:none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style-type: none;}
+img{vertical-align: top;}
+
+h1,h2, h3, h4, h5, h6{font-style: inherit; font-weight: 400;}
+
+
+
+
+
+body {
+    font-family: 'Century Gothic', sans-serif;
+    background-image: url(/images/cm2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    max-height: 96%;
+}
+
+header {
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white; /* Цвет текста */
+}
+
+nav {
+    padding: 10px;
+    list-style: none; /* Убираем стандартные маркеры списка */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Выстраиваем элементы в строку */
+    margin-right: 50px; /* Внешний отступ между элементами */
+    user-select: none;
+}
+
+nav a {
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    color: white; /* Цвет текста */
+    font-weight: bold; /* Жирный текст */
+    font-size: 20px; /* Размер текста */
+    transition: color 0.3s ease; /* Плавный переход цвета текста */
+}
+
+nav a:hover {
+    color: #66c2ff; /* Цвет текста при наведении */
+}
+
+.logo {
+    margin: 0 0 0 80px;
+    font-size: 35px; /* Установите размер текста для логотипа */
+    font-weight: bold;
+    user-select: none;
+}
+
+.list {
+    display: flex;
+}
+
+.list li {
+    padding: 5px;
+    margin: 0 45px 0 0;
+}
+
+.list li:last-child{
+    border-radius: 50px;
+    border: 3px solid #fff;
+}
+
+.info {
+    max-height: 92%;
+    width: 100%;
+    display: flex;
+    user-select: none;
+}
+
+.container {
+    max-width: 93%;
+    margin: 100px auto;
+  }
+  
+  .slider-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .slider-wrapper .slide-button {
+    position: absolute;
+    top: 50%;
+    outline: none;
+    border: none;
+    height: 50px;
+    width: 50px;    
+    z-index: 5;
+    color: #000000;
+    display: flex;
+    cursor: pointer;
+    font-size: 2.2rem;
+    background: #ffffff;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .slider-wrapper .slide-button:hover {
+    background: #898989;
+  }
+  
+  .slider-wrapper .slide-button#prev-slide {
+    left: 0px;
+  }
+  
+  .slider-wrapper .slide-button#next-slide {
+    right: 0px;
+  }
+  
+  .slider-wrapper .image-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+    font-size: 0;
+    list-style: none;
+    margin-bottom: 30px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    scrollbar-color: #ccc transparent;
+  }
+  
+  .slider-wrapper .image-list img {
+    width: 100%; /* Растягиваем изображения на 100% от ширины контейнера */
+    height: auto;
+  }
+  
+  .slider-wrapper .image-list::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .slider-wrapper .image-list .image-item {
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .container .slider-scrollbar {
+    height: 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .slider-scrollbar .scrollbar-track {
+    background: transparent;
+    width: 100%;
+    height: 2px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    position: relative;
+  }
+  
+  .slider-scrollbar:hover .scrollbar-track {
+    height: 4px;
+  }
+  
+  .slider-scrollbar .scrollbar-thumb {
+    position: absolute;
+    background: #ccc;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    height: 100%;
+    cursor: grab;
+    border-radius: inherit;
+  }
+  
+  .slider-scrollbar .scrollbar-thumb:active {
+    cursor: grabbing;
+    height: 8px;
+    top: -2px;
+  }
+  
+  .slider-scrollbar .scrollbar-thumb::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -10px;
+    bottom: -10px;
+  }
+  
+  /* Styles for mobile and tablets */
+  @media only screen and (max-width: 1023px) {
+    .slider-wrapper .slide-button {
+      display: none !important;
+    }
+  
+    .slider-wrapper .image-list {
+      gap: 10px;
+      margin-bottom: 15px;
+      scroll-snap-type: x mandatory;
+      
+    }
+  
+    .slider-wrapper .image-list .image-item {
+      width: 280px;
+      height: 380px;
+     
+    }
+  
+    .slider-scrollbar .scrollbar-thumb {
+      width: 20%;
+    }
+  }
+
+  .arrows {
+    width: 30px;
+    height: 30px;
+  }
+
+.podpisi {
+  color: #fff;
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+}

@@ -1,0 +1,209 @@
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*, *:before, *:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus, :active{outline: none;}
+a:focus, a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html, body{
+	height: 100%;
+	width: 100%;
+	font-style: 100%;
+	line-height: 1;
+	font-style: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea{font-family: inherit;}
+
+input::-ms-clear{display:none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style-type: none;}
+img{vertical-align: top;}
+
+h1,h2, h3, h4, h5, h6{font-style: inherit; font-weight: 400;}
+
+
+
+
+
+body {
+    font-family: 'Century Gothic', sans-serif;
+    background-image: url(../images/sign.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    height: 100%;
+}
+
+header {
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white; /* Цвет текста */
+}
+
+nav {
+    padding: 10px;
+    list-style: none; /* Убираем стандартные маркеры списка */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Выстраиваем элементы в строку */
+    margin-right: 50px; /* Внешний отступ между элементами */
+}
+
+nav a {
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    color: white; /* Цвет текста */
+    font-weight: bold; /* Жирный текст */
+    font-size: 20px; /* Размер текста */
+    transition: color 0.3s ease; /* Плавный переход цвета текста */
+    user-select: none;
+}
+
+nav a:hover {
+    color: #FF592A; /* Цвет текста при наведении */
+}
+
+.logo {
+    margin: 0 0 0 80px;
+    font-size: 35px; /* Установите размер текста для логотипа */
+    font-weight: bold;
+    user-select: none;
+}
+
+.list {
+    display: flex;
+}
+
+.list li {
+    padding: 5px;
+    margin: 0 45px 0 0;
+}
+
+.two {
+    min-width: 100%;
+}
+
+.elems{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sign {
+    margin: 20px auto;
+    width: 500px;
+    height: 550px;
+    border-radius: 50px;
+    border: 3px solid rgba(244, 244, 244, 0.60);
+    background: linear-gradient(145deg, rgba(244, 244, 244, 0.40) -4.23%, rgba(244, 244, 244, 0.20) 102.58%);
+    backdrop-filter: blur(50px);
+}
+
+.login {
+    margin: 20px auto;
+    width: 450px;
+    height: 400px;
+    border-radius: 50px;
+    border: 3px solid rgba(244, 244, 244, 0.60);
+    background: linear-gradient(145deg, rgba(244, 244, 244, 0.40) -4.23%, rgba(244, 244, 244, 0.20) 102.58%);
+    backdrop-filter: blur(50px);
+}
+
+.footer {
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between; /* Распределить элементы слева и справа */
+    align-items: center;
+    margin-top: 35px;
+    height: 40px;
+}
+
+.ft {
+    margin: 0 auto; 
+}
+
+.text {
+    margin-top: 40px;
+    color: #fff;
+    font-weight: 800;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.vvod {
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.tekst {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 800;
+    margin: 20px 0 0 0;
+}
+
+.vvod-items{
+    color: #fff;
+    display: flex;
+    margin: 10px 0 10px 0;
+    font-size: 30px;
+    border: none;
+    border-bottom: 2px solid white;
+    background-color: transparent;
+    outline: none;
+}
+
+.button-login {   
+    justify-content: center;
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    background: #FF592A;
+    flex-shrink: 0;
+    font-size: 25px;
+}
+
+.button-sign {   
+    justify-content: center;
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    background: #FF592A;
+    flex-shrink: 0;
+    font-size: 25px;
+}
+
+.button:hover {
+    background: #FF492A;
+}
+
+.batton{
+    margin: 30px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.batton a {
+    color: #fff;
+}

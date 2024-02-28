@@ -1,0 +1,191 @@
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*, *:before, *:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus, :active{outline: none;}
+a:focus, a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html, body{
+	height: 100%;
+	width: 100%;
+	font-style: 100%;
+	line-height: 1;
+	font-style: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea{font-family: inherit;}
+
+input::-ms-clear{display:none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style-type: none;}
+img{vertical-align: top;}
+
+h1,h2, h3, h4, h5, h6{font-style: inherit; font-weight: 400;}
+
+
+
+
+
+body {
+    font-family: 'Century Gothic', sans-serif;
+    background-image: url(/images/sign.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    height: 100%;
+}
+
+header {
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white; /* Цвет текста */
+}
+
+nav {
+    padding: 10px;
+    list-style: none; /* Убираем стандартные маркеры списка */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Выстраиваем элементы в строку */
+    margin-right: 50px; /* Внешний отступ между элементами */
+}
+
+nav a {
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    color: white; /* Цвет текста */
+    font-weight: bold; /* Жирный текст */
+    font-size: 20px; /* Размер текста */
+    transition: color 0.3s ease; /* Плавный переход цвета текста */
+    user-select: none;
+}
+
+nav a:hover {
+    color: #FF592A; /* Цвет текста при наведении */
+}
+
+.logo {
+    margin: 0 0 0 80px;
+    font-size: 35px; /* Установите размер текста для логотипа */
+    font-weight: bold;
+    user-select: none;
+}
+
+.list {
+    display: flex;
+}
+
+.list li {
+    padding: 5px;
+    margin: 0 45px 0 0;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0; /* Внутренний отступ для содержимого вашего footer */
+    text-align: center; /* Выравнивание содержимого по центру */
+    color: white;
+    font-size: 20px; 
+}
+
+.ft {
+    margin: 0 auto; 
+}
+
+.main {
+    min-width: 100%;
+    height: 600px;
+}
+
+.container {
+    margin: 20px auto;
+    width: 85%;
+    min-height: 600px;
+
+    border-radius: 50px;
+    border: 3px solid rgba(244, 244, 244, 0.60);
+    background: linear-gradient(145deg, rgba(244, 244, 244, 0.40) -4.23%, rgba(244, 244, 244, 0.20) 102.58%);
+    backdrop-filter: blur(50px);
+}
+
+.self-info {
+    color: azure;
+    margin: 10px auto;
+    width: 350px;
+    height: 30px;
+}
+
+.user-data {
+    width: 100%;
+    height: 420px;
+    display: flex;
+}
+
+.user-image {
+    background-image: url(/images/friren.jpg);
+    height: 400px;
+    width: 400px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.user-info {
+    font-size: 30px;
+    color: azure;
+}
+
+.user {
+    margin-top: 10px;
+}
+
+.user1 {
+    margin: 10px 0 100px 0;
+}
+
+.button-exit {
+    display: flex;
+    justify-content: center;  
+}
+
+.exit {
+    background-color: #D9D9D9;
+    width: 400px;
+    height: 90px;
+    border-radius: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+    border: 1px solid black;
+}
+
+#loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

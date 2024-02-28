@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover</title>
+    <link rel="stylesheet" href="/css/discover.css">
+    <script src="/javascript/slider.js" defer></script>
+    <script src="/javascript/link.js"></script>
+    <script src="/javascript/check_on_sign.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">Космический музей</div>
+        <nav>
+            <ul class="list">
+                <li><a href="main">Главная</a></li>
+                <li><a href="">Информация</a></li>
+                <li><a href="about">О нас</a></li>
+                <li><a href="quiz">Викторина</a></li>
+                <li><a href="#" onclick="check_on_sign()">Профиль</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="info">
+    <div class="container"> 
+        <div class="slider-wrapper">
+          <button id="prev-slide" class="slide-button material-symbols-rounded">
+            <img src="/images/left-arrow.png" class="arrows" alt="">
+          </button>
+          <ul class="image-list">
+            <li>
+              <img class="image-item" onclick="navigateToPage1()" src="/images/i1.png" alt="img-1">
+              <div class = "podpisi">Астронавты</div>
+            </li>
+            <li>
+              <img class="image-item" onclick="navigateToPage2()" src="/images/i2.jpg" alt="img-3" />
+              <div class = "podpisi">Космические корабли</div>
+            </li>
+            <li>
+              <img class="image-item" onclick="navigateToPage3()" src="/images/i3.jpg" alt="img-2" />
+              <div class = "podpisi">Путешествие</div>
+            </li>
+            <li>
+              <img class="image-item" onclick="navigateToPage4()" src="/images/i4.jpg" alt="img-4" />
+              <div class = "podpisi">Карта солнечной системы</div>
+            </li>
+            <li>
+              <img class="image-item" src="/images/friren.jpg" alt="img-5" />
+              <div class = "podpisi">???</div>
+            </li>
+          </ul>
+          <button id="next-slide" class="slide-button material-symbols-rounded">
+            <img src="/images/right-arrow.png" class="arrows" alt="">
+          </button>
+        </div>
+        <div class="slider-scrollbar">
+          <div class="scrollbar-track">
+            <div class="scrollbar-thumb"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
