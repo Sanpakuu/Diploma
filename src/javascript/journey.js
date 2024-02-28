@@ -2,7 +2,7 @@ var PARTICLE_NUM = 600;
 var PARTICLE_BASE_RADIUS = 0.5;
 var FL = 500;
 var DEFAULT_SPEED = 10;
-var BOOST_SPEED = 500;
+// var BOOST_SPEED = 500;
 
 var canvas;
 var canvasWidth, canvasHeight;
@@ -12,7 +12,6 @@ var mouseX, mouseY;
 var speed = DEFAULT_SPEED;
 var targetSpeed = DEFAULT_SPEED;
 var particles = [];
-var animationTimeout;
 
 window.addEventListener('load', function() {
     canvas = document.getElementById('c');
@@ -26,7 +25,7 @@ window.addEventListener('load', function() {
         context.fillStyle = 'rgb(255, 255, 255)';
     };
     
-    window.addEventListener('resize', resize);
+    document.addEventListener('resize', resize);
     resize();
     
     mouseX = centerX;
@@ -37,34 +36,18 @@ window.addEventListener('load', function() {
         particles[i].z -= 500 * Math.random();
     }
     
-    document.addEventListener('mousemove', function(e) {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-    }, false);
+    // document.addEventListener('mousemove', function(e) {
+    //     mouseX = e.clientX;
+    //     mouseY = e.clientY;
+    // }, false);
     
-    document.addEventListener('mousedown', function(e) {
-        targetSpeed = BOOST_SPEED;
-    }, false);
+    // document.addEventListener('mousedown', function(e) {
+    //     targetSpeed = BOOST_SPEED;
+    // }, false);
     
     document.addEventListener('mouseup', function(d) {
         targetSpeed = DEFAULT_SPEED;
     }, false);
-    
-    document.getElementById('startButton').addEventListener('click', function() {
-        // Скрытие кнопки и отображение контейнера с путешествием
-        document.getElementById('startButton').style.display = 'none';
-        document.getElementById('journeyContainer').style.display = 'block';
-        
-        // Запуск анимации разгона до световой скорости
-        speed = 0; // Останавливаем звезды
-        animateToLightspeed();
-        
-        // Через 5 секунд возвращаем скорость звезд к обычной и останавливаем анимацию разгона
-        setTimeout(function() {
-            speed = DEFAULT_SPEED;
-            clearTimeout(animationTimeout);
-        }, 5000);
-    });
     
     setInterval(loop, 1000 / 60);
 }, false);
@@ -130,27 +113,12 @@ function loop() {
     context.fill();
 }
 
-function animateToLightspeed() {
-    var step = 0;
-    function animate() {
-        for (var i = 0; i < particles.length; i++) {
-            particles[i].z -= 2 * step; // Увеличиваем скорость звезд
-        }
-        step += 0.01; // Увеличиваем шаг анимации
-        if (step <= 1) {
-            animationTimeout = setTimeout(animate, 1000 / 60);
-        }
-    }
-    animate();
-}
-
 function randomizeParticle(p) {
     p.x = Math.random() * canvasWidth;
     p.y = Math.random() * canvasHeight;
     p.z = Math.random() * 1500 + 500;
     return p;
 }
-
 function Particle(x, y, z) {
     this.x = x || 0;
     this.y = y || 0;
