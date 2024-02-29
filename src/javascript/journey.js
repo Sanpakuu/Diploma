@@ -12,6 +12,7 @@ var mouseX, mouseY;
 var speed = DEFAULT_SPEED;
 var targetSpeed = DEFAULT_SPEED;
 var particles = [];
+var boosting = false; // Переменная для отслеживания состояния ускорения
 
 window.addEventListener('load', function() {
     canvas = document.getElementById('c');
@@ -36,10 +37,6 @@ window.addEventListener('load', function() {
         particles[i].z -= 500 * Math.random();
     }
     
-    document.addEventListener('mouseup', function(d) {
-        targetSpeed = DEFAULT_SPEED;
-    }, false);
-    
     setInterval(loop, 1000 / 60);
 }, false);
 
@@ -51,6 +48,16 @@ function loop() {
     
     speed += (targetSpeed - speed) * 0.01;
     
+    // Если ускорение активно, устанавливаем прозрачность и размытие
+    if (boosting) {
+        stepsContainer.style.opacity = "0";
+        stepsContainer.style.backdropFilter = "none";
+    } else {
+        // Иначе, возвращаем прозрачность и размытие к исходным значениям
+        stepsContainer.style.opacity = "1";
+        stepsContainer.style.backdropFilter = "blur(10px)";
+    }
+
     var p;
     var cx, cy;
     var rx, ry;
@@ -118,10 +125,20 @@ function Particle(x, y, z) {
 }
 
 var boostButton = document.getElementById('boostButton');
+var stepsContainer = document.querySelector('.steps');
+
 boostButton.addEventListener('click', function() {
-    console.log("btn clc")
-    targetSpeed *= 100; // Увеличиваем скорость в 3 раза
+    stepsContainer.style.opacity = "0"; // Устанавливаем прозрачность 0 при нажатии на кнопку
+    targetSpeed *= 100; // Увеличиваем скорость в 100 раз
+    boosting = true; // Устанавливаем переменную ускорения в true
     setTimeout(function() {
         targetSpeed = DEFAULT_SPEED; // Возвращаем скорость обратно к стандартной
-    }, 1000); // Ждем 1 секунду перед возвращением скорости
+    }, 1500); // Ждем 0.5 секунды перед возвращением скорости и стиля
+
+    // Возврат прозрачности и размытия после завершения ускорения
+    setTimeout(function() {
+        stepsContainer.style.opacity = "1"; // Возвращаем прозрачность
+        stepsContainer.style.backdropFilter = "blur(10px)"; // Возвращаем размытие
+        boosting = false; // Устанавливаем переменную ускорения в false
+    }, 5500);
 });
