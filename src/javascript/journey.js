@@ -1,8 +1,8 @@
 var PARTICLE_NUM = 600;
 var PARTICLE_BASE_RADIUS = 0.5;
 var FL = 500;
-var DEFAULT_SPEED = 10;
-// var BOOST_SPEED = 500;
+var DEFAULT_SPEED = 1;
+var BOOST_SPEED = 500;
 
 var canvas;
 var canvasWidth, canvasHeight;
@@ -35,15 +35,6 @@ window.addEventListener('load', function() {
         particles[i] = randomizeParticle(new Particle());
         particles[i].z -= 500 * Math.random();
     }
-    
-    // document.addEventListener('mousemove', function(e) {
-    //     mouseX = e.clientX;
-    //     mouseY = e.clientY;
-    // }, false);
-    
-    // document.addEventListener('mousedown', function(e) {
-    //     targetSpeed = BOOST_SPEED;
-    // }, false);
     
     document.addEventListener('mouseup', function(d) {
         targetSpeed = DEFAULT_SPEED;
@@ -125,3 +116,12 @@ function Particle(x, y, z) {
     this.z = z || 0;
     this.pastZ = 0;
 }
+
+var boostButton = document.getElementById('boostButton');
+boostButton.addEventListener('click', function() {
+    console.log("btn clc")
+    targetSpeed *= 100; // Увеличиваем скорость в 3 раза
+    setTimeout(function() {
+        targetSpeed = DEFAULT_SPEED; // Возвращаем скорость обратно к стандартной
+    }, 1000); // Ждем 1 секунду перед возвращением скорости
+});
