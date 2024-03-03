@@ -48,16 +48,6 @@ function loop() {
     
     speed += (targetSpeed - speed) * 0.01;
     
-    // Если ускорение активно, устанавливаем прозрачность и размытие
-    if (boosting) {
-        stepsContainer.style.opacity = "0";
-        stepsContainer.style.backdropFilter = "none";
-    } else {
-        // Иначе, возвращаем прозрачность и размытие к исходным значениям
-        stepsContainer.style.opacity = "1";
-        stepsContainer.style.backdropFilter = "blur(10px)";
-    }
-
     var p;
     var cx, cy;
     var rx, ry;
