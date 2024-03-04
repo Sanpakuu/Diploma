@@ -98,6 +98,7 @@ nav a:hover {
 
 .container {
     height: 100%;
+    margin: auto;
 }
 
 .astronauts-container {
@@ -111,6 +112,7 @@ nav a:hover {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: 0px auto;
 }
 
 .astro{
@@ -143,10 +145,11 @@ nav a:hover {
     border-radius: 10%;
 }
 .as-info {
+    display: flex;
+    justify-content: center;
     font-size: 24px;
     color: #fff;
     width: 100%;
-    height: 300px;
 }
 
 #loader-container {

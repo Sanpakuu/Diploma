@@ -30,29 +30,29 @@ function hideLoader() {
 }
 
 // Получение ссылки на узел "astronauts"
-const astronautsRef = database.ref('astronauts');
+const astronautsRef = database.ref('ships');
 
 // Обработчик события загрузки данных из базы данных
 document.addEventListener('DOMContentLoaded', function() {
 
     astronautsRef.once('value', function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
-            var astronautData = childSnapshot.val();
-            var astronautKey = childSnapshot.key;
+            var shipData = childSnapshot.val();
+            var shipKey = childSnapshot.key;
 
             // Доступ к данным о космонавте
-            var astronautName = astronautData.astronautName;
-            var astronautInfo = astronautData.astronautInfo;
-            var astronautImageURL = astronautData.astronautImage;
+            var shipName = shipData.shipName;
+            var shipInfo = shipData.shipInfo;
+            var shipImageURL = shipData.shipImage;
 
             // Обновление HTML для соответствующего космонавта
-            var astronautDiv = document.getElementById(astronautKey);
-            if (astronautDiv) {
-                astronautDiv.querySelector('.as-name').innerText = astronautName;
-                astronautDiv.querySelector('.as-info').innerText = astronautInfo;
-                astronautDiv.querySelector('.as-image').style.backgroundImage = 'url(' + astronautImageURL + ')';
+            var shipDiv = document.getElementById(shipKey);
+            if (shipDiv) {
+                shipDiv.querySelector('.sh-name').innerText = shipName;
+                shipDiv.querySelector('.sh-info').innerText = shipInfo;
+                shipDiv.querySelector('.sh-image').style.backgroundImage = 'url(' + shipImageURL + ')';
             } else {
-                console.error('Элемент ' + astronautKey + ' не найден.');
+                console.error('Элемент ' + shipKey + ' не найден.');
             }
         });
 
@@ -62,8 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // // Сохраняем информацию о космонавтах в базе данных
-// database.ref('astronauts/as3').set({
-//     astronautName: "Имя_космонавта_3",
-//     astronautImage: "",
-//     astronautInfo: "Информация_о_космонавте_3"
+// database.ref('ships/sh3').set({
+//     shipName: "Корабль_3",
+//     shipImage: "",
+//     shipInfo: "Информация_о_корабле_3"
 // });
