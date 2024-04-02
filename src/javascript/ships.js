@@ -62,8 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // // Сохраняем информацию о космонавтах в базе данных
-// database.ref('ships/sh3').set({
-//     shipName: "Корабль_3",
+// database.ref('ships/sh1').set({
+//     shipName: "",
 //     shipImage: "",
-//     shipInfo: "Информация_о_корабле_3"
+//     shipInfo: ""
 // });
