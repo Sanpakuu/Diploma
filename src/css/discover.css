@@ -42,7 +42,7 @@ h1,h2, h3, h4, h5, h6{font-style: inherit; font-weight: 400;}
 
 body {
     font-family: 'Century Gothic', sans-serif;
-    background-image: url(/images/cm2.png);
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/diplom-93856.appspot.com/o/background%2Fcm2.png?alt=media&token=44eb1776-90a0-4122-9f91-7c013220cba2);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -162,7 +162,7 @@ nav a:hover {
   }
   
   .slider-wrapper .image-list img {
-    width: 100%; /* Растягиваем изображения на 100% от ширины контейнера */
+    width: auto; /* Растягиваем изображения на 100% от ширины контейнера */
     height: auto;
   }
   

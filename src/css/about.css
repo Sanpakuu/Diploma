@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
 body {
     max-width: 2160px;
     font-family: 'Century Gothic', sans-serif;
-    background-image: url(/images/cm3.png);
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/diplom-93856.appspot.com/o/background%2Fcm3.png?alt=media&token=a57bfd1b-584e-4d64-8dc3-ea656a36e13c);
     background-size: cover;
     background-position: center;
     background-repeat: repeat;
@@ -134,7 +134,7 @@ nav a:hover {
     margin-left: 120px;
     margin-top: 10px;
     margin-right: 50px;
-    background-image: url("/images/123.jpg");
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/diplom-93856.appspot.com/o/background%2Ffriren.jpg?alt=media&token=1e38aeaf-1eaf-4ba0-9ee1-be447fd70a94);
     width: 250px;
     height: 250px;
     background-size: cover;

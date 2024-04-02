@@ -42,7 +42,7 @@ h1,h2, h3, h4, h5, h6{font-style: inherit; font-weight: 400;}
 
 body {
     font-family: 'Century Gothic', sans-serif;
-    background-image: url(/images/quiz.png);
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/diplom-93856.appspot.com/o/background%2Fquiz.png?alt=media&token=b4600098-5f49-4e8d-8077-8856ee3ff68a);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -177,7 +177,7 @@ nav a:hover {
     margin: 30px auto;
     width: 350px;
     height: 350px;
-    background-image: url(/images/unc_user.png);
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/diplom-93856.appspot.com/o/background%2Func_user.png?alt=media&token=08760ca3-1d6d-46be-b589-1287fcaecb27);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

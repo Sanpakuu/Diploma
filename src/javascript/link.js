@@ -19,5 +19,5 @@ function navigateToPage4() {
   }  
 function navigateToPage5() {
     // Используйте window.location.href для перехода на другую страницу
-    window.location.href = '';
+    window.location.href = 'archive';
   } 

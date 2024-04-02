@@ -42,7 +42,7 @@ h1,h2, h3, h4, h5, h6{font-style: inherit; font-weight: 400;}
 
 body {
     font-family: 'Century Gothic', sans-serif;
-    background-image: url(/images/cm3.png);
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/diplom-93856.appspot.com/o/background%2Fcm3.png?alt=media&token=a57bfd1b-584e-4d64-8dc3-ea656a36e13c);
     background-size: cover;
     background-position: center;
 }

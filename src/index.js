@@ -71,6 +71,10 @@
     const indexPath = path.join(staticPath, 'cabinet.html');
     res.sendFile(indexPath);
   });
+  app.get('/archive', (req, res) => {
+    const indexPath = path.join(staticPath, 'information/i5(archive).html');
+    res.sendFile(indexPath);
+  });
 
   // Запуск сервера
   app.listen(port, () => {
