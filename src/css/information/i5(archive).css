@@ -100,6 +100,42 @@ nav a:hover {
     margin: auto;
 }
 
+.vid-container {
+    width: 95%;
+    height: auto;
+    margin: 30px auto;
+}
+
+.videos {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+    justify-content: center;
+    margin: 0px auto;
+}
+
+.video{
+    width: calc(50% - 20px); /* Ширина видео - половина от ширины контейнера минус отступы */
+    height: 80%;
+    margin: 10px;
+    border-radius: 10px;
+    border: 3px solid rgba(244, 244, 244, 0.60);
+    background: linear-gradient(145deg, rgba(244, 244, 244, 0.40) -4.23%, rgba(244, 244, 244, 0.20) 102.58%);
+    backdrop-filter: blur(100px);
+    text-align: center; /* Центрируем содержимое внутри блока .video */
+}
+
+.video iframe {
+    display: inline-block; /* Делаем iframe блочным элементом, чтобы можно было применять к нему вертикальные и горизонтальные отступы */
+    vertical-align: middle; /* Выравниваем iframe по вертикали */
+    margin: 35px auto; /* Устанавливаем автоматичесные отступы слева и справа для центрирования по горизонтали */
+}
+
+.description {
+    color: #fff;
+    font-size: 28px;
+}
+
 #loader-container {
     position: fixed;
     top: 0;
