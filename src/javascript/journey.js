@@ -1,3 +1,43 @@
+const firebaseConfig = {
+    apiKey: "AIzaSyDiL7cJ54cNtuDD676elAz0iSRMOaVth-U",
+    authDomain: "diplom-93856.firebaseapp.com",
+    projectId: "diplom-93856",
+    storageBucket: "diplom-93856.appspot.com",
+    messagingSenderId: "788892321907",
+    appId: "1:788892321907:web:e7597c191b5f3578efc206",
+    measurementId: "G-FX34DDGDHN",
+};
+
+// Инициализация Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Получение ссылки на базу данных
+const database = firebase.database();
+
+function showLoader() {
+    document.querySelector(".steps-container").style.display = "none";
+    document.getElementById("loader-container").style.display = "flex";
+    document.getElementById("loader").style.display = "flex";
+}
+
+function hideLoader() {
+    document.getElementById("loader-container").style.display = "none";
+    document.getElementById("loader").style.display = "none";
+    document.querySelector(".steps-container").style.display = "flex";
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Показываем лоадер при загрузке страницы
+    showLoader();
+
+    // Здесь можно выполнить загрузку данных из базы данных или другие асинхронные операции
+    // В примере ниже, просто задерживаем скрытие лоадера на 2 секунды
+    setTimeout(function() {
+        // Скрываем лоадер после загрузки данных
+        hideLoader();
+    }, 2000); // 2000 мс = 2 секунды
+});
+
 // Объявляем переменные для частиц
 var PARTICLE_NUM = 600;
 var PARTICLE_BASE_RADIUS = 0.5;
@@ -128,62 +168,75 @@ const stepImageElement = document.querySelector('.step-image');
 var boostButton = document.getElementById('boostButton');
 var stepsContainer = document.querySelector('.steps');
 
-// Создаем массив с информацией о шагах
-const stepsInfo = [
-  {
-    step: 1,
-    name: 'Первый шаг',
-    description: 'Описание первого шага',
-    imageUrl: 'https://firebasestorage.googleapis.com/v0/b/diplom-93856.appspot.com/o/background%2Ffriren.jpg?alt=media&token=1e38aeaf-1eaf-4ba0-9ee1-be447fd70a94',
-  },
-  {
-    step: 2,
-    name: 'Второй шаг',
-    description: 'Описание второго шага',
-    imageUrl: 'https://firebasestorage.googleapis.com/v0/b/diplom-93856.appspot.com/o/background%2Ffriren.jpg?alt=media&token=1e38aeaf-1eaf-4ba0-9ee1-be447fd70a94',
-  },
-  {
-    step: 3,
-    name: 'Третий шаг',
-    description: 'Описание третьего шага',
-    imageUrl: 'https://firebasestorage.googleapis.com/v0/b/diplom-93856.appspot.com/o/background%2Ffriren.jpg?alt=media&token=1e38aeaf-1eaf-4ba0-9ee1-be447fd70a94',
-  }
-];
-
 // Устанавливаем начальное значение для шага
 let currentStep = 0;
 
-// Функция для обновления информации на странице
-function updateStepInfo() {
-    // Получаем информацию о текущем шаге
-    const currentStepInfo = stepsInfo[currentStep];
-    // Обновляем элементы на странице
-    stepNameElement.textContent = currentStepInfo.name;
-    stepDescriptionElement.textContent = currentStepInfo.description;
-    stepImageElement.style.backgroundImage = `url(${currentStepInfo.imageUrl})`;
+// Функция для обновления информации на странице на основе данных из базы данных
+async function updateStepInfo() {
+    // Получаем ссылку на текущий шаг из базы данных
+    const currentStepRef = database.ref(`steps/step${currentStep}`);
+
+    // Используем метод once для одноразового чтения данных текущего шага
+    currentStepRef.once('value')
+        .then((snapshot) => {
+            const stepData = snapshot.val(); // Получаем данные шага из снимка
+            if (stepData) {
+                // Обновляем элементы на странице на основе данных из БД для текущего шага
+                stepNameElement.textContent = stepData.stepName;
+                stepDescriptionElement.textContent = stepData.stepDescription;
+                stepImageElement.style.backgroundImage = `url(${stepData.stepImage})`;
+            } else {
+                console.log("Данные для текущего шага не найдены в базе данных.");
+            }
+        })
+        .catch((error) => {
+            console.error("Ошибка при чтении данных из базы данных для текущего шага:", error);
+        });
 }
 
-// Функция для обработки нажатия кнопки "Продолжить"
+
 function handleBoostButtonClick() {
     if (!isBoostAnimating) {
-        targetSpeed *= 100; // Увеличиваем скорость в 100 раз
+        targetSpeed *= 50; // Увеличиваем скорость в 100 раз
         isBoostAnimating = true; // Устанавливаем флаг анимации ускорения
         stepsContainer.style.opacity = "0"; // Начинаем анимацию прозрачности
+        console.log(currentStep)
         setTimeout(function() {
             targetSpeed = DEFAULT_SPEED; // Возвращаем скорость обратно к стандартной
             isBoostAnimating = false; // Сбрасываем флаг анимации ускорения
             
             // После завершения анимации прозрачности и размытия, меняем шаг и показываем контейнер
-            setTimeout(function() {
-                currentStep++; // Переходим к следующему шагу
-                if (currentStep >= stepsInfo.length) {
-                    currentStep = 0; // Если достигнут конец списка шагов, переходим на первый шаг
-                }
-                updateStepInfo(); // Обновляем информацию на странице
-                stepsContainer.style.opacity = "1"; // Возвращаем прозрачность
-                stepsContainer.style.backdropFilter = "blur(10px)"; // Возвращаем размытие
-            }, 4000); // Ждем 1 секунду перед возвращением прозрачности и размытия
-        }, 600); // Ждем 1.5 секунды перед возвращением скорости и сменой шага
+            currentStep++; // Увеличиваем шаг на 1
+            if (currentStep >= 4) {
+                currentStep = 0; // Если достигнут конец списка шагов, переходим на первый шаг
+            }
+
+            // Получаем ссылку на следующий шаг из базы данных
+            const nextStepRef = database.ref(`steps/step${currentStep}`);
+
+            // Используем метод once для одноразового чтения данных следующего шага
+            nextStepRef.once('value')
+                .then((snapshot) => {
+                    const stepData = snapshot.val(); // Получаем данные шага из снимка
+                    if (stepData) {
+                        // Обновляем информацию на странице на основе данных из БД для следующего шага
+                        stepNameElement.textContent = stepData.stepName;
+                        stepDescriptionElement.textContent = stepData.stepDescription;
+                        stepImageElement.style.backgroundImage = `url(${stepData.stepImage})`;
+                    } else {
+                        console.log("Данные для шага не найдены в базе данных.");
+                    }
+
+                    setTimeout(function() {
+                        stepsContainer.style.opacity = "1"; // Возвращаем прозрачность
+                        stepsContainer.style.backdropFilter = "blur(10px)"; // Возвращаем размытие
+                    }, 3000); // Небольшая задержка перед началом анимации контейнера
+                })
+                .catch((error) => {
+                    console.error("Ошибка при чтении данных из базы данных:", error);
+                    isBoostAnimating = false; // Сбрасываем флаг анимации ускорения в случае ошибки
+                });
+        }, 1500); // Ждем 4 секунды перед сменой шага и началом анимации
     }
 }
 
@@ -193,3 +246,11 @@ boostButton.addEventListener('click', handleBoostButtonClick);
 
 // Вызываем функцию обновления информации для отображения начального состояния
 updateStepInfo();
+
+// database.ref('steps/step1').set({
+//         stepName: "Шаг1",
+//         stepImage: "",
+//         stepDescription: "1'"
+// });
+
+    
