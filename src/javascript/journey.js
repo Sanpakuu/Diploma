@@ -207,7 +207,7 @@ function handleBoostButtonClick() {
             
             // После завершения анимации прозрачности и размытия, меняем шаг и показываем контейнер
             currentStep++; // Увеличиваем шаг на 1
-            if (currentStep >= 4) {
+            if (currentStep >= 6) {
                 currentStep = 0; // Если достигнут конец списка шагов, переходим на первый шаг
             }
 
@@ -247,10 +247,16 @@ boostButton.addEventListener('click', handleBoostButtonClick);
 // Вызываем функцию обновления информации для отображения начального состояния
 updateStepInfo();
 
-// database.ref('steps/step1').set({
-//         stepName: "Шаг1",
+// database.ref('steps/step4').set({
+//         stepName: "",
 //         stepImage: "",
-//         stepDescription: "1'"
+//         stepDescription: ""
+// });
+
+// database.ref('steps/step5').set({
+//     stepName: "",
+//     stepImage: "",
+//     stepDescription: ""
 // });
 
     
