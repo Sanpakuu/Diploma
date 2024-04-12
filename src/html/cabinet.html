@@ -11,7 +11,7 @@
     <div class="all">
       <div class="content">
         <header>
-          <div class="logo">Космический музей</div>
+          <div class="logo">Профиль</div>
           <nav>
             <ul class="list">
               <li><a href="main">Главная</a></li>
@@ -33,24 +33,47 @@
             <div></div>
           </div>
         </div>
-        <main class="main" style="display: none;">
+        <main class="main" style="display: none">
           <div class="container">
             <div class="self-info">
               <h1>Личная информация</h1>
             </div>
             <div class="user-data">
-              <div class="user-image"></div>
+              <div class="profile-image-container">
+                <div class="user-image"></div>
+                <div class="edit-image">
+
+                  <input type="file" id="profileImageUpload" accept="image/*" style="display: none;">
+
+                  <span id="editImageText">Изменить изображение</span>
+                  <img src="https://firebasestorage.googleapis.com/v0/b/diplom-93856.appspot.com/o/background%2Fredact.png?alt=media&token=86c54462-ea75-4ed5-a152-183415fae29c" alt="Edit" id="editImageIcon" style="width: 20px; height: 20px;">
+                </div>
+              </div>
               <div class="user-info">
-                <ul>
-                  <li class="user" id="id">UID:</li>
-                  <li class="user" id="login">Логин:</li>
-                  <li class="user" id="email">Email:</li>
-                  <li class="user1" id="password">Пароль:</li>
-                  <li class="user" id="quiz-score-1">Баллы за Викторину №1:</li>
-                  <li class="user" id="quiz-score-2">Баллы за Викторину №2:</li>
-                  <li class="user" id="quiz-score-3">Баллы за Викторину №3:</li>
-                  <li class="user" id="quiz-score-4">Баллы за Викторину №4:</li>
-                </ul>
+                <div class="user-info1">
+                  <ul>
+                    <li class="user" id="id">UID:</li>
+                    <li class="user" id="login">Логин:</li>
+                    <li class="user" id="email">Email:</li>
+                    <li class="user" id="password">Пароль: <span id="password-text"></span><img src="https://firebasestorage.googleapis.com/v0/b/diplom-93856.appspot.com/o/background%2Fredact.png?alt=media&token=86c54462-ea75-4ed5-a152-183415fae29c" alt="Фото" id = "password-image" style="margin-left: 10px;" width="30px" height="30px"></li>
+                  </ul>
+                </div>
+                <div class="user-info2">
+                  <ul>
+                    <li class="user" id="quiz-score-1">
+                      Баллы за Викторину №1:
+                    </li>
+                    <li class="user" id="quiz-score-2">
+                      Баллы за Викторину №2:
+                    </li>
+                    <li class="user" id="quiz-score-3">
+                      Баллы за Викторину №3:
+                    </li>
+                    <li class="user" id="quiz-score-4">
+                      Баллы за Викторину №4:
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             <div class="button-exit">
@@ -65,10 +88,24 @@
         </footer>
       </div>
     </div>
+    <!-- Модальное окно для смены пароля -->
+    <div id="passwordModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="passwordChangeForm">
+          <label for="oldPassword">Старый пароль:</label>
+          <input type="password" id="oldPassword" name="oldPassword" required>
+          <label for="newPassword">Новый пароль:</label>
+          <input type="password" id="newPassword" name="newPassword" required>
+          <button type="submit" id="button-submit">Сменить пароль</button>
+        </form>
+      </div>
+    </div>
   </body>
 
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 
   <script src="/javascript/cabinet.js"></script>

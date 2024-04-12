@@ -63,10 +63,10 @@ async function login() {
         alert("Неверные данные");
         return;
      }
-     console.log(123);//111111111111111111111111111111111111
+     
      await auth.signInWithEmailAndPassword(email, password)
      .then( function() {
-        console.log('sdsdsd')//11111111111111111111111111111
+        
         var user = auth.currentUser;
         var database_ref = database.ref()
 
