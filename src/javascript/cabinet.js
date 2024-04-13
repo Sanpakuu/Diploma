@@ -72,7 +72,15 @@ function displayUserInfo(uid) {
     document.getElementById("login").textContent += ` ${userData.login}`;
     document.getElementById("email").textContent += ` ${userData.email}`;
     document.getElementById("password-text").textContent += ` ${userData.pass}`;
+
+    if (userData.stepsCompleted != null && userData.stepsCompleted != undefined) {
+      document.getElementById("step-score").textContent += ` ${userData.stepsCompleted}`;
+    }
+    else {
+      document.getElementById("step-score").textContent += ` 0`;
+    }
     console.log("Данные о пользователе загружены!");
+
     hideLoader();
   });
 }
@@ -114,7 +122,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Здесь код для смены пароля, используя oldPassword и newPassword
     // Например, вызов функции смены пароля в Firebase или вашей собственной системе аутентификации
 
-    console.log("Пароль изменен!"); // Замените эту строку на реальную логику смены пароля
     modal.style.display = "none"; // Закрыть модальное окно после смены пароля
   });
 });

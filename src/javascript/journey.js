@@ -195,12 +195,14 @@ async function updateStepInfo() {
 }
 
 
+// Назначаем обработчик события на кнопку "Продолжить"
+boostButton.addEventListener('click', handleBoostButtonClick);
+
 function handleBoostButtonClick() {
     if (!isBoostAnimating) {
         targetSpeed *= 50; // Увеличиваем скорость в 100 раз
         isBoostAnimating = true; // Устанавливаем флаг анимации ускорения
         stepsContainer.style.opacity = "0"; // Начинаем анимацию прозрачности
-        console.log(currentStep)
         setTimeout(function() {
             targetSpeed = DEFAULT_SPEED; // Возвращаем скорость обратно к стандартной
             isBoostAnimating = false; // Сбрасываем флаг анимации ускорения
@@ -209,6 +211,14 @@ function handleBoostButtonClick() {
             currentStep++; // Увеличиваем шаг на 1
             if (currentStep >= 6) {
                 currentStep = 0; // Если достигнут конец списка шагов, переходим на первый шаг
+            }
+
+            // Обновляем количество пройденных шагов в базе данных пользователя
+            const user = firebase.auth().currentUser;
+            if (user) {
+                const userStepsRef = firebase.database().ref('users/' + user.uid + '/stepsCompleted');
+                userStepsRef.set(currentStep);
+                console.log("Шаг обновлен, данные занесены в БД. Текущий шаг: ", currentStep);
             }
 
             // Получаем ссылку на следующий шаг из базы данных
@@ -239,10 +249,6 @@ function handleBoostButtonClick() {
         }, 1500); // Ждем 4 секунды перед сменой шага и началом анимации
     }
 }
-
-
-// Назначаем обработчик события на кнопку "Продолжить"
-boostButton.addEventListener('click', handleBoostButtonClick);
 
 // Вызываем функцию обновления информации для отображения начального состояния
 updateStepInfo();

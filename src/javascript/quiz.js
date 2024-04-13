@@ -91,13 +91,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Функция для записи результатов викторины в массив
   function recordQuizScore(quizIndex, score) {
-    // Проверяем, есть ли в массиве объект для данной викторины
+    // Проверяем, инициализирован ли quizScores[quizIndex] как массив
     if (!Array.isArray(quizScores[quizIndex])) {
-      quizScores[quizIndex] = []; // Если нет, создаем новый массив для викторины
+      quizScores[quizIndex] = []; // Если нет, инициализируем его как пустой массив
     }
-    // Записываем результат викторины в соответствующий массив в массиве
+    // Теперь мы уверены, что quizScores[quizIndex] - это массив, и можем безопасно использовать push
     quizScores[quizIndex].push(score);
-
+  
     // Отправляем данные о пройденных викторинах в базу данных Firebase
     sendQuizScoresToFirebase(quizScores);
   }
@@ -258,11 +258,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Функция для отправки данных о пройденных викторинах в базу данных Firebase
   function sendQuizScoresToFirebase(scores) {
-    // Создаем ссылку на место в базе данных, где будут храниться результаты викторин для данного пользователя
+    // Убедитесь, что scores не содержит undefined значения
+    const cleanedScores = {};
+    Object.keys(scores).forEach(key => {
+      if (scores[key] !== undefined) {
+        cleanedScores[key] = scores[key];
+      }
+    });
+
+    // Создаем ссылку на место в базе данных
     const userScoresRef = database.ref(`userScores/${uid}`);
     
-    // Записываем данные о пройденных викторинах в базу данных
-    userScoresRef.update(scores, (error) => {
+    // Записываем очищенные данные о пройденных викторинах в базу данных
+    userScoresRef.update(cleanedScores, (error) => {
       if (error) {
         console.error("Ошибка при отправке данных в базу данных Firebase:", error);
       } else {
