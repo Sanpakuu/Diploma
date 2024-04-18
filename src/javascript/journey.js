@@ -16,6 +16,7 @@ const database = firebase.database();
 
 function showLoader() {
     document.querySelector(".steps-container").style.display = "none";
+    document.querySelector(".quiz-info").style.display = "none";
     document.getElementById("loader-container").style.display = "flex";
     document.getElementById("loader").style.display = "flex";
 }
@@ -23,19 +24,28 @@ function showLoader() {
 function hideLoader() {
     document.getElementById("loader-container").style.display = "none";
     document.getElementById("loader").style.display = "none";
-    document.querySelector(".steps-container").style.display = "flex";
+    
+    if (localStorage.getItem('isLoggedIn') === 'true'){
+        document.querySelector(".steps-container").style.display = "flex";
+        document.querySelector(".quiz-info").style.display = "none";
+    }
+    else {
+        document.querySelector(".steps-container").style.display = "none";
+        document.querySelector(".quiz-info").style.display = "block";
+    }
+}
+
+function navigateToSign() {
+    // Используйте window.location.href для перехода на другую страницу
+    window.location.href = "sign";
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Показываем лоадер при загрузке страницы
-    showLoader();
-
-    // Здесь можно выполнить загрузку данных из базы данных или другие асинхронные операции
-    // В примере ниже, просто задерживаем скрытие лоадера на 2 секунды
+    showLoader();// Показываем лоадер при загрузке страницы
+    
     setTimeout(function() {
-        // Скрываем лоадер после загрузки данных
-        hideLoader();
-    }, 2000); // 2000 мс = 2 секунды
+        hideLoader();// Скрываем лоадер после загрузки данных
+    }, 2000);//2 секунды
 });
 
 // Объявляем переменные для частиц

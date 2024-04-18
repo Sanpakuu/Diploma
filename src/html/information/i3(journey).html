@@ -33,7 +33,6 @@
           <div></div>
         </div>
       </div>
-
       <div class="steps-container" style="display: none;">
         <div class="steps">
           <div class="full-step">
@@ -48,6 +47,16 @@
           </div>
         </div>
       </div>
+      
+      <div class="quiz-info" style="display: none;">
+        <div class="quiz-login">
+          Для прохождения викторин войдите в аккаунт
+        </div>
+        <div class="img-user"></div>
+        <button class="button-auth" onclick="navigateToSign()">
+          Авторизация
+        </button>
+      </div>
 
       <canvas id="c"></canvas>
 
@@ -55,10 +64,10 @@
     </div>
   </body>
 
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 
-    <script src="/javascript/journey.js"></script>
-    <script src="/javascript/check_on_sign.js"></script>
+  <script src="/javascript/journey.js"></script>
+  <script src="/javascript/check_on_sign.js"></script>
 </html>
