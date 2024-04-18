@@ -219,7 +219,7 @@ function handleBoostButtonClick() {
             
             // После завершения анимации прозрачности и размытия, меняем шаг и показываем контейнер
             currentStep++; // Увеличиваем шаг на 1
-            if (currentStep >= 6) {
+            if (currentStep >= 10) {
                 currentStep = 0; // Если достигнут конец списка шагов, переходим на первый шаг
             }
 
@@ -250,29 +250,24 @@ function handleBoostButtonClick() {
                     setTimeout(function() {
                         stepsContainer.style.opacity = "1"; // Возвращаем прозрачность
                         stepsContainer.style.backdropFilter = "blur(10px)"; // Возвращаем размытие
-                    }, 3000); // Небольшая задержка перед началом анимации контейнера
+                    }, 1000); // Небольшая задержка перед началом анимации контейнера
                 })
                 .catch((error) => {
                     console.error("Ошибка при чтении данных из базы данных:", error);
                     isBoostAnimating = false; // Сбрасываем флаг анимации ускорения в случае ошибки
                 });
-        }, 1500); // Ждем 4 секунды перед сменой шага и началом анимации
+        }, 500); // Ждем 4 секунды перед сменой шага и началом анимации
     }
 }
 
 // Вызываем функцию обновления информации для отображения начального состояния
 updateStepInfo();
 
-// database.ref('steps/step4').set({
-//         stepName: "",
-//         stepImage: "",
-//         stepDescription: ""
-// });
-
-// database.ref('steps/step5').set({
+// database.ref('steps/step10').set({
 //     stepName: "",
 //     stepImage: "",
 //     stepDescription: ""
 // });
+
 
     

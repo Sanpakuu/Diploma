@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // // Сохраняем информацию о космонавтах в базе данных
-// database.ref('astronauts/as6').set({
+// database.ref('astronauts/as10').set({
 //     astronautName: "",
 //     astronautImage: "",
 //     astronautInfo: ""
