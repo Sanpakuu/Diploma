@@ -113,17 +113,6 @@ document.addEventListener('DOMContentLoaded', function() {
       modal.style.display = "none";
     }
   }
-
-  // Добавьте обработчик для формы смены пароля
-  document.getElementById("passwordChangeForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    var oldPassword = document.getElementById("oldPassword").value;
-    var newPassword = document.getElementById("newPassword").value;
-    // Здесь код для смены пароля, используя oldPassword и newPassword
-    // Например, вызов функции смены пароля в Firebase или вашей собственной системе аутентификации
-
-    modal.style.display = "none"; // Закрыть модальное окно после смены пароля
-  });
 });
 
 // Функция для смены пароля
@@ -165,6 +154,7 @@ document.getElementById("passwordChangeForm").addEventListener("submit", functio
   var newPassword = document.getElementById("newPassword").value;
   
   changeUserPassword(oldPassword, newPassword);
+  modal.style.display = "none"; // Закрыть модальное окно после смены пароля
 });
 
 document.getElementById('editImageText').addEventListener('click', function() {

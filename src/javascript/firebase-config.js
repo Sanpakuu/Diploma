@@ -114,15 +114,7 @@ function validate_field(field) {
     } else return true;
 }
 
-// Функция отправки почты (здесь может быть ваша логика отправки данных)
-function sendEmail() {
-    const email = document.getElementById("emailInput").value;
-    const modal = document.getElementById("myModal")
-    alert("Email отправлен на адрес: " + email);
-    modal.style.display = "none"; // Закрыть модальное окно после смены пароля
-}
-
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {//модальное окно
     document.getElementById("send-password").addEventListener("click", function () {
         document.getElementById("myModal").style.display = "flex";
     });
@@ -144,15 +136,23 @@ document.addEventListener("DOMContentLoaded", function () {
             modal.style.display = "none";
         }
     };
+});
 
-    // Добавьте обработчик для формы смены пароля
-    document
-        .getElementById("passwordChangeForm")
-        .addEventListener("submit", function (e) {
-            e.preventDefault();
-            var oldPassword = document.getElementById("oldPassword").value;
-            var newPassword = document.getElementById("newPassword").value;
-            // Здесь код для смены пароля, используя oldPassword и newPassword
-            // Например, вызов функции смены пароля в Firebase или вашей собственной системе аутентификации
-        });
+document.getElementById('send-password-button').addEventListener('click', function(event) {
+    event.preventDefault(); // Предотвращаем стандартное поведение кнопки
+  
+    var email = document.getElementById('emailInput').value;
+    var modal = document.getElementById("myModal");
+
+    firebase.auth().sendPasswordResetEmail(email)
+      .then(function() {
+        // Письмо успешно отправлено
+        alert('Проверьте вашу почту для сброса пароля.');
+        modal.style.display = "none"; // Закрыть модальное окно после смены пароля
+      })
+      .catch(function(error) {
+        // Ошибка отправки письма
+        var errorMessage = error.message;
+        alert(errorMessage);
+      });      
 });
