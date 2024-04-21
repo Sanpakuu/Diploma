@@ -1,178 +1,260 @@
-*{
-	padding: 0;
-	margin: 0;
-	border: 0;
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
-*, *:before, *:after{
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
-:focus, :active{outline: none;}
-a:focus, a:active{outline: none;}
-
-nav,footer,header,aside{display: block;}
-
-html, body{
-	height: 100%;
-	width: 100%;
-	font-style: 100%;
-	line-height: 1;
-	font-style: 14px;
-	-ms-text-size-adjust: 100%;
-	-moz-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
 }
 
-input, button, textarea{font-family: inherit;}
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
 
-input::-ms-clear{display:none;}
-button{cursor: pointer;}
-button::-moz-focus-inner{padding: 0;border: 0;}
-a, a:visited{text-decoration: none;}
-a:hover{text-decoration: none;}
-ul li{list-style-type: none;}
-img{vertical-align: top;}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-style: 100%;
+  line-height: 1;
+  font-style: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
 
-h1,h2, h3, h4, h5, h6{font-style: inherit; font-weight: 400;}
+input,
+button,
+textarea {
+  font-family: inherit;
+}
 
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style-type: none;
+}
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-style: inherit;
+  font-weight: 400;
+}
 
 
 
 
 body {
-    font-family: 'Century Gothic', sans-serif;
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/diplom-93856.appspot.com/o/background%2Fsign.png?alt=media&token=f620a719-1b9e-4883-b8f9-4987411db708);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; 
-    height: 100%;
+  font-family: "Century Gothic", sans-serif;
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/diplom-93856.appspot.com/o/background%2Fsign.png?alt=media&token=f620a719-1b9e-4883-b8f9-4987411db708);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
 }
 
 header {
-    padding-top: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white; /* Цвет текста */
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white; /* Цвет текста */
 }
 
 nav {
-    padding: 10px;
-    list-style: none; /* Убираем стандартные маркеры списка */
-    margin: 0;
-    padding: 0;
-    display: flex; /* Выстраиваем элементы в строку */
-    margin-right: 50px; /* Внешний отступ между элементами */
+  padding: 10px;
+  list-style: none; /* Убираем стандартные маркеры списка */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Выстраиваем элементы в строку */
+  margin-right: 50px; /* Внешний отступ между элементами */
 }
 
 nav a {
-    text-decoration: none; /* Убираем подчеркивание ссылок */
-    color: white; /* Цвет текста */
-    font-weight: bold; /* Жирный текст */
-    font-size: 20px; /* Размер текста */
-    transition: color 0.3s ease; /* Плавный переход цвета текста */
-    user-select: none;
+  text-decoration: none; /* Убираем подчеркивание ссылок */
+  color: white; /* Цвет текста */
+  font-weight: bold; /* Жирный текст */
+  font-size: 20px; /* Размер текста */
+  transition: color 0.3s ease; /* Плавный переход цвета текста */
+  user-select: none;
 }
 
 nav a:hover {
-    color: #FF592A; /* Цвет текста при наведении */
+  color: #ff592a; /* Цвет текста при наведении */
 }
 
 .logo {
-    margin: 0 0 0 80px;
-    font-size: 35px; /* Установите размер текста для логотипа */
-    font-weight: bold;
-    user-select: none;
+  margin: 0 0 0 80px;
+  font-size: 35px; /* Установите размер текста для логотипа */
+  font-weight: bold;
+  user-select: none;
 }
 
 .list {
-    display: flex;
+  display: flex;
 }
 
 .list li {
-    padding: 5px;
-    margin: 0 45px 0 0;
+  padding: 5px;
+  margin: 0 45px 0 0;
 }
 
 .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    padding: 10px 0; /* Внутренний отступ для содержимого вашего footer */
-    text-align: center; /* Выравнивание содержимого по центру */
-    color: white;
-    font-size: 20px; 
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0; /* Внутренний отступ для содержимого вашего footer */
+  text-align: center; /* Выравнивание содержимого по центру */
+  color: white;
+  font-size: 20px;
 }
 
 .ft {
-    margin: 0 auto; 
+  margin: 0 auto;
 }
 
 .main {
-    min-width: 100%;
-    height: 600px;
+  min-width: 100%;
+  height: 600px;
 }
 
 .container {
-    margin: 20px auto;
-    width: 85%;
-    min-height: 600px;
+  margin: 20px auto;
+  width: 85%;
+  min-height: 600px;
 
-    border-radius: 50px;
-    border: 3px solid rgba(244, 244, 244, 0.60);
-    background: linear-gradient(145deg, rgba(244, 244, 244, 0.40) -4.23%, rgba(244, 244, 244, 0.20) 102.58%);
-    backdrop-filter: blur(50px);
+  border-radius: 50px;
+  border: 3px solid rgba(244, 244, 244, 0.6);
+  background: linear-gradient(
+    145deg,
+    rgba(244, 244, 244, 0.4) -4.23%,
+    rgba(244, 244, 244, 0.2) 102.58%
+  );
+  backdrop-filter: blur(50px);
 }
 
 .self-info {
-    color: azure;
-    margin: 10px auto;
-    width: 350px;
-    height: 30px;
+  color: azure;
+  margin: 10px auto;
+  width: 350px;
+  height: 30px;
 }
 
 .user-data {
-    width: 100%;
-    height: 420px;
-    display: flex;
+  width: 100%;
+  height: 420px;
+  display: flex;
 }
 
 .user-image {
-    height: 400px;
-    width: 400px;
-    margin: 15px;
-    border-radius: 50px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  height: 400px;
+  width: 400px;
+  margin: 15px;
+  border-radius: 50px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .user-info {
-    font-size: 30px;
-    color: azure;
+  font-size: 30px;
+  color: azure;
 }
 
 .user-info1 {
-    margin-bottom: 10%;
+  margin-bottom: 10%;
 }
 
 .user {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .button-exit {
-    display: flex;
-    justify-content: center;  
+  display: flex;
+  justify-content: center;
 }
 
 .exit {
-    background-color: #D9D9D9;
-    width: 400px;
-    height: 90px;
+  background-color: #d9d9d9;
+  width: 400px;
+  height: 90px;
+  border-radius: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 10px 10px 230px;
+  transition: background-color 0.3s ease;
+  border: 1px solid black;
+}
+
+#loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-image {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  align-items: center;
+  margin-left: 80px;
+}
+
+#password-image {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+#openModalBtn {
+    background-color: #d9d9d9;
+    width: 200px;
+    height: 45px;
     border-radius: 20px;
-    font-size: 28px;
+    font-size: 18px;
     font-weight: bold;
     text-align: center;
     margin: 10px;
@@ -180,74 +262,84 @@ nav a:hover {
     border: 1px solid black;
 }
 
-#loader-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.edit-image {
-    color: #FFF;
-    font-size: 20px;
-    cursor: pointer;
-    align-items: center;
-    margin-left: 80px;
-}
-
-#password-image {
-    margin-left: 10px;
-    cursor: pointer;
-}
-
 /* Стиль модального окна */
-.modal {
-    font-size: 25px;
-    display: none; /* Скрыть модальное окно по умолчанию */
-    position: fixed; /* Оставаться на месте при прокрутке */
-    z-index: 1; /* Сидеть над всеми другими элементами */
-    left: 0;
-    top: 0;
-    width: 100%; /* Полная ширина */
-    height: 100%; /* Полная высота */
-    overflow: auto; /* Включить прокрутку, если нужно */
-    background-color: rgb(0,0,0); /* Цвет фона */
-    background-color: rgba(0,0,0,0.4); /* Черный с небольшой прозрачностью */
-  }
-  
-  /* Стиль содержимого модального окна */
-  .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% от верха и по центру */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Можно настроить ширину */
-  }
-  
-  #oldPassword,
-  #newPassword {
-    font-size: 20px;
-  }
-  
-  #button-submit {
-    font-size: 25px;
+.modal,
+.modal2 {
+  font-size: 25px;
+  display: none; /* Скрыть модальное окно по умолчанию */
+  position: fixed; /* Оставаться на месте при прокрутке */
+  z-index: 1; /* Сидеть над всеми другими элементами */
+  left: 0;
+  top: 0;
+  width: 100%; /* Полная ширина */
+  height: 100%; /* Полная высота */
+  overflow: auto; /* Включить прокрутку, если нужно */
+  background-color: rgba(0, 0, 0, 0.4); /* Черный с небольшой прозрачностью */
+}
+
+/* Стиль содержимого модального окна */
+.modal-content,
+.modal-content2 {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% от верха и по центру */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%; /* Можно настроить ширину */
+  height: 50%;
+}
+
+#oldPassword,
+#newPassword {
+  font-size: 20px;
+}
+
+#button-submit {
+  font-size: 25px;
+}
+
+/* Стиль кнопки закрытия */
+.close,
+.close2 {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus,
+.close2:hover,
+.close2:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+textarea {
+    resize: none; /* Запретить изменение размера поля */
   }
 
-  /* Стиль кнопки закрытия */
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
+#textInput {
+    margin: 0px auto;
+    font-size: 20px;
+    margin-top: 10px;
+    width: 500px;
+    height: 250px;
+}
+
+#sendBtn {
+    margin: 0px auto;
+    background-color: #d9d9d9;
+    width: 200px;
+    height: 45px;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.textarea-wrapper {
+    display: flex;
+    flex-direction: column;
+}

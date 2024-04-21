@@ -42,11 +42,20 @@
               <div class="profile-image-container">
                 <div class="user-image"></div>
                 <div class="edit-image">
-
-                  <input type="file" id="profileImageUpload" accept="image/*" style="display: none;">
+                  <input
+                    type="file"
+                    id="profileImageUpload"
+                    accept="image/*"
+                    style="display: none"
+                  />
 
                   <span id="editImageText">Изменить изображение</span>
-                  <img src="https://firebasestorage.googleapis.com/v0/b/diplom-93856.appspot.com/o/background%2Fredact.png?alt=media&token=86c54462-ea75-4ed5-a152-183415fae29c" alt="Edit" id="editImageIcon" style="width: 20px; height: 20px;">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/diplom-93856.appspot.com/o/background%2Fredact.png?alt=media&token=86c54462-ea75-4ed5-a152-183415fae29c"
+                    alt="Edit"
+                    id="editImageIcon"
+                    style="width: 20px; height: 20px"
+                  />
                 </div>
               </div>
               <div class="user-info">
@@ -55,7 +64,17 @@
                     <li class="user" id="id">UID:</li>
                     <li class="user" id="login">Логин:</li>
                     <li class="user" id="email">Email:</li>
-                    <li class="user" id="password">Пароль: <span id="password-text"></span><img src="https://firebasestorage.googleapis.com/v0/b/diplom-93856.appspot.com/o/background%2Fredact.png?alt=media&token=86c54462-ea75-4ed5-a152-183415fae29c" alt="Фото" id = "password-image" style="margin-left: 10px;" width="30px" height="30px"></li>
+                    <li class="user" id="password">
+                      Пароль: <span id="password-text"></span
+                      ><img
+                        src="https://firebasestorage.googleapis.com/v0/b/diplom-93856.appspot.com/o/background%2Fredact.png?alt=media&token=86c54462-ea75-4ed5-a152-183415fae29c"
+                        alt="Фото"
+                        id="password-image"
+                        style="margin-left: 10px"
+                        width="30px"
+                        height="30px"
+                      />
+                    </li>
                   </ul>
                 </div>
                 <div class="user-info2">
@@ -81,6 +100,7 @@
             </div>
             <div class="button-exit">
               <button class="exit" onclick="anti_auth()">Выход</button>
+              <button id="openModalBtn">Отправить отзыв</button>
             </div>
           </div>
         </main>
@@ -97,11 +117,21 @@
         <span class="close">&times;</span>
         <form id="passwordChangeForm">
           <label for="oldPassword">Старый пароль:</label>
-          <input type="password" id="oldPassword" name="oldPassword" required>
+          <input type="password" id="oldPassword" name="oldPassword" required />
           <label for="newPassword">Новый пароль:</label>
-          <input type="password" id="newPassword" name="newPassword" required>
+          <input type="password" id="newPassword" name="newPassword" required />
           <button type="submit" id="button-submit">Сменить пароль</button>
         </form>
+      </div>
+    </div>
+    <div id="myModal" class="modal2">
+      <div class="modal-content2">
+        <span class="close2">&times;</span>
+        <h2 class="h22">Введите свой отзыв</h2>
+        <div class="textarea-wrapper">
+          <textarea id="textInput" rows="6" cols="60"></textarea>
+          <button id="sendBtn">Отправить</button>
+        </div>
       </div>
     </div>
   </body>
