@@ -278,7 +278,14 @@ nav a:hover {
 }
 
 /* Стиль содержимого модального окна */
-.modal-content,
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% от верха и по центру */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Можно настроить ширину */
+}
+
 .modal-content2 {
   background-color: #fefefe;
   margin: 15% auto; /* 15% от верха и по центру */
