@@ -1,0 +1,16 @@
+.fadeIn {
+    opacity: 0; /* Начальное состояние - элемент скрыт */
+    animation-name: fadeInAnimation;
+    animation-duration: 0.5s;
+    animation-delay: 0.3s; /* Задержка перед началом анимации */
+    animation-fill-mode: forwards; /* Сохранить конечные стили после анимации */
+  }
+  
+  @keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+  }

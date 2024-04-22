@@ -123,6 +123,12 @@ nav a:hover {
     background: linear-gradient(145deg, rgba(244, 244, 244, 0.40) -4.23%, rgba(244, 244, 244, 0.20) 102.58%);
     backdrop-filter: blur(100px);
     text-align: center; /* Центрируем содержимое внутри блока .video */
+
+    opacity: 0; /* Начальное состояние - элемент скрыт */
+    animation-name: fadeInAnimation;
+    animation-duration: 0.5s;
+    animation-delay: 0.3s; /* Задержка перед началом анимации */
+    animation-fill-mode: forwards; /* Сохранить конечные стили после анимации */
 }
 
 .video iframe {

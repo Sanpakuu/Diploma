@@ -6,6 +6,7 @@
     <title>Quiz</title>
     <link rel="stylesheet" href="/css/quiz.css" />
     <link rel="stylesheet" href="/css/loader.css" />
+    <link rel="stylesheet" href="/css/animation.css">
   </head>
   <body>
     <header>
@@ -35,13 +36,13 @@
     <section class="quiz">
       <div class="quest">
         <div class="container">
-          <div class="quiz-buttons" style="display: none">
+          <div class="quiz-buttons fadeIn" style="display: none">
             <button class="quiz-button" data-quiz="1">Викторина 1</button>
             <button class="quiz-button" data-quiz="2">Викторина 2</button>
             <button class="quiz-button" data-quiz="3">Викторина 3</button>
             <button class="quiz-button" data-quiz="4">Викторина 4</button>
           </div>
-          <div class="quiz-content" style="display: none">
+          <div class="quiz-content fadeIn" style="display: none">
             <div class="question">
               <h1 class="question_number">
                 
@@ -71,7 +72,7 @@
               </div>
             </div>
           </div>
-          <div class="quiz-info">
+          <div class="quiz-info fadeIn">
             <div class="quiz-login">Для прохождения викторин войдите в аккаунт</div>
             <div class="img-user"></div>
             <button class="button-auth" onclick="navigateToSign()">Авторизация</button>
