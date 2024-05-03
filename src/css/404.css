@@ -1,0 +1,36 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Блокируем появление скроллинга */
+  }
+
+body {
+    font-family: "Century Gothic", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/diplom-93856.appspot.com/o/background%2F404.jpg?alt=media&token=8e98f9c4-4fdd-4504-b4ac-37923f35f312);
+    background-size: cover;
+    background-position: center;
+    background-repeat: unset;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 60px;
+}
+
+.container {
+    margin-top: 250px;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+}
+
+.ref {
+    color: #66c2ff;
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+  

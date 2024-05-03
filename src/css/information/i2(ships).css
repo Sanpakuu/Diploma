@@ -119,6 +119,7 @@ nav a:hover {
     width: 700px;
     height: 650px;
     margin: 10px;
+    padding: 10px;
     border-radius: 50px;
     border: 3px solid rgba(244, 244, 244, 0.60);
     background: linear-gradient(145deg, rgba(244, 244, 244, 0.40) -4.23%, rgba(244, 244, 244, 0.20) 102.58%);

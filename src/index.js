@@ -75,8 +75,16 @@
     const indexPath = path.join(staticPath, 'information/i5(archive).html');
     res.sendFile(indexPath);
   });
+  app.get('/404', (req, res) => {
+    const indexPath = path.join(staticPath, '404.html');
+    res.sendFile(indexPath);
+  });
 
   // Запуск сервера
   app.listen(port, () => {
     console.log(`Сервер запущен на порту ${port}`);
+  });
+  
+  app.use((req, res, next) => {
+    res.status(404).redirect('/404');
   });
