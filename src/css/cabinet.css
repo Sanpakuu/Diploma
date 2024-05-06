@@ -220,7 +220,7 @@ nav a:hover {
   font-size: 28px;
   font-weight: bold;
   text-align: center;
-  margin: 10px 10px 10px 230px;
+  margin: 10px;
   transition: background-color 0.3s ease;
   border: 1px solid black;
 }
@@ -249,22 +249,8 @@ nav a:hover {
   cursor: pointer;
 }
 
-#openModalBtn {
-    background-color: #d9d9d9;
-    width: 200px;
-    height: 45px;
-    border-radius: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    margin: 10px;
-    transition: background-color 0.3s ease;
-    border: 1px solid black;
-}
-
 /* Стиль модального окна */
-.modal,
-.modal2 {
+.modal {
   font-size: 25px;
   display: none; /* Скрыть модальное окно по умолчанию */
   position: fixed; /* Оставаться на месте при прокрутке */
@@ -305,8 +291,7 @@ nav a:hover {
 }
 
 /* Стиль кнопки закрытия */
-.close,
-.close2 {
+.close {
   color: #aaa;
   float: right;
   font-size: 28px;
@@ -314,39 +299,8 @@ nav a:hover {
 }
 
 .close:hover,
-.close:focus,
-.close2:hover,
-.close2:focus {
+.close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
-}
-
-textarea {
-    resize: none; /* Запретить изменение размера поля */
-  }
-
-#textInput {
-    margin: 0px auto;
-    font-size: 20px;
-    margin-top: 10px;
-    width: 500px;
-    height: 250px;
-}
-
-#sendBtn {
-    margin: 0px auto;
-    background-color: #d9d9d9;
-    width: 200px;
-    height: 45px;
-    border-radius: 10px;
-    font-size: 20px;
-    text-align: center;
-    margin-bottom: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.textarea-wrapper {
-    display: flex;
-    flex-direction: column;
 }
