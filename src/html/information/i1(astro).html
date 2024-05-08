@@ -1,109 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Астронавты</title>
-    <link rel="stylesheet" href="/css/information/i1(astro).css">
+    <link rel="stylesheet" href="/css/information/i1(astro).css" />
     <link rel="stylesheet" href="/css/loader.css" />
-    <link rel="stylesheet" href="/css/animation.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/css/animation.css" />
+  </head>
+  <body>
     <header>
-        <div class = "logo">Астронавты</div>
-        <nav>
-            <ul class="list">
-                    <li><a href="discover">Исследование</a></li>
-                    <li><a href="about">О нас</a></li>
-                    <li><a href="quiz">Викторины</a></li>
-                    <li><a href="#" onclick="check_on_sign()">Профиль</a></li>
-            </ul>
-        </nav>
+      <div class="logo">Астронавты</div>
+      <nav>
+        <ul class="list">
+          <li><a href="discover">Исследование</a></li>
+          <li><a href="about">О нас</a></li>
+          <li><a href="quiz">Викторины</a></li>
+          <li><a href="#" onclick="check_on_sign()">Профиль</a></li>
+        </ul>
+      </nav>
     </header>
     <div id="loader-container">
-        <div id="loader" class="lds-roller" style="display: none">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+      <div id="loader" class="lds-roller" style="display: none">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="main" style="display: none">
+      <div class="container">
+        <div class="astronauts-container">
+          <!-- Модальное окно -->
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span id="modal-close" class="close">&times;</span>
+              <div id="modal-content-name" class="as-name"></div>
+              <div id="modal-content-info" class="as-info"></div>
+              <div id="modal-content-image" class="as-image"></div>
+            </div>
+          </div>
+          <div class="astros">
+            <div class="astro" id="as1">
+              <div class="as-name"></div>
+              <div class="as-image"></div>
+              <div class="more-info">Подробнее...</div>
+            </div>
+            <div class="astro" id="as2">
+              <div class="as-name"></div>
+              <div class="as-image"></div>
+              <div class="more-info">Подробнее...</div>
+            </div>
+          </div>
+          <div class="astros">
+            <div class="astro" id="as3">
+              <div class="as-name"></div>
+              <div class="as-image"></div>
+              <div class="more-info">Подробнее...</div>
+            </div>
+            <div class="astro" id="as4">
+              <div class="as-name"></div>
+              <div class="as-image"></div>
+              <div class="more-info">Подробнее...</div>
+            </div>
+          </div>
+          <div class="astros">
+            <div class="astro" id="as5">
+              <div class="as-name"></div>
+              <div class="as-image"></div>
+              <div class="more-info">Подробнее...</div>
+            </div>
+            <div class="astro" id="as6">
+              <div class="as-name"></div>
+              <div class="as-image"></div>
+              <div class="more-info">Подробнее...</div>
+            </div>
+          </div>
+          <div class="astros">
+            <div class="astro" id="as7">
+              <div class="as-name"></div>
+              <div class="as-image"></div>
+              <div class="more-info">Подробнее...</div>
+            </div>
+            <div class="astro" id="as8">
+              <div class="as-name"></div>
+              <div class="as-image"></div>
+              <div class="more-info">Подробнее...</div>
+            </div>
+          </div>
+          <div class="astros">
+            <div class="astro" id="as9">
+              <div class="as-name"></div>
+              <div class="as-image"></div>
+              <div class="more-info">Подробнее...</div>
+            </div>
+            <div class="astro" id="as10">
+              <div class="as-name"></div>
+              <div class="as-image"></div>
+              <div class="more-info">Подробнее...</div>
+            </div>
+          </div>
         </div>
       </div>
-    <div class="main" style="display: none;">
-        <div class="container">
-            <div class="astronauts-container">
-                <div class="astros">
-                    <div class="astro" id="as1">
-                        <div class="as-name"></div>
-                        <div class="as-image"></div>
-                        <div class="as-info"></div>
-                    </div>
-                    <div class="astro" id="as2">
-                        <div class="as-name"></div>
-                        <div class="as-image"></div>
-                        <div class="as-info"></div>
-                    </div>
-                </div>
-                <div class="astros">
-                    <div class="astro" id="as3">
-                        <div class="as-name"></div>
-                        <div class="as-image"></div>
-                        <div class="as-info"></div>
-                    </div>
-                    <div class="astro" id="as4">
-                        <div class="as-name"></div>
-                        <div class="as-image"></div>
-                        <div class="as-info"></div>
-                    </div>
-                </div>
-                <div class="astros">
-                    <div class="astro" id="as5">
-                        <div class="as-name"></div>
-                        <div class="as-image"></div>
-                        <div class="as-info"></div>
-                    </div>
-                    <div class="astro" id="as6">
-                        <div class="as-name"></div>
-                        <div class="as-image"></div>
-                        <div class="as-info"></div>
-                    </div>
-                </div>
-                <div class="astros">
-                    <div class="astro" id="as7">
-                        <div class="as-name"></div>
-                        <div class="as-image"></div>
-                        <div class="as-info"></div>
-                    </div>
-                    <div class="astro" id="as8">
-                        <div class="as-name"></div>
-                        <div class="as-image"></div>
-                        <div class="as-info"></div>
-                    </div>
-                </div>
-                <div class="astros">
-                    <div class="astro" id="as9">
-                        <div class="as-name"></div>
-                        <div class="as-image"></div>
-                        <div class="as-info"></div>
-                    </div>
-                    <div class="astro" id="as10">
-                        <div class="as-name"></div>
-                        <div class="as-image"></div>
-                        <div class="as-info"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-</body>
+  </body>
 
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 
-    <script src="/javascript/astronauts.js"></script>
-    <script src="/javascript/check_on_sign.js"></script>
+  <script src="/javascript/astronauts.js"></script>
+  <script src="/javascript/check_on_sign.js"></script>
 </html>

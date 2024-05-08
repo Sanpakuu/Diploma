@@ -49,8 +49,14 @@ document.addEventListener('DOMContentLoaded', function() {
             var astronautDiv = document.getElementById(astronautKey);
             if (astronautDiv) {
                 astronautDiv.querySelector('.as-name').innerText = astronautName;
-                astronautDiv.querySelector('.as-info').innerText = astronautInfo;
                 astronautDiv.querySelector('.as-image').style.backgroundImage = 'url(' + astronautImageURL + ')';
+
+                // Добавление обработчика события для отображения модального окна
+                astronautDiv.querySelector('.more-info').addEventListener('click', function() {
+                    document.getElementById("modal-content-info").innerText = astronautInfo;
+                    document.getElementById("modal-content-image").style.backgroundImage = 'url(' + astronautImageURL + ')';
+                    document.getElementById("myModal").style.display = "block";
+                });
             } else {
                 console.error('Элемент ' + astronautKey + ' не найден.');
             }
@@ -60,6 +66,19 @@ document.addEventListener('DOMContentLoaded', function() {
         hideLoader();
     });
 });
+
+// Обработчик клика на кнопку закрытия модального окна
+document.getElementById("modal-close").addEventListener('click', function() {
+    document.getElementById("myModal").style.display = "none";
+});
+
+// Закрыть модальное окно, если пользователь кликает вне его
+window.onclick = function(event) {
+    var modal = document.getElementById("myModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
 // // Сохраняем информацию о космонавтах в базе данных
 // database.ref('astronauts/as10').set({
