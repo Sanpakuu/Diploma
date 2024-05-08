@@ -21,3 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // И запускаем циклический вызов функции каждые 2000 миллисекунд
 setInterval(shiftWords, 2000);
+
+function Go() {
+    window.location.href = 'discover';
+}
