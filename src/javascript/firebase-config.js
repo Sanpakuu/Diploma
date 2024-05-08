@@ -20,17 +20,24 @@ function register() {
     const password = document.getElementById("password2").value;
     const confirmPassword = document.getElementById("confirmPassword").value;
 
-    if (
-        validate_email(email) == false ||
-        validate_pass(password) == false ||
-        validate_field(login) == false
-    ) {
-        alert("Неверные данные");
+
+    if (validate_email(email) == false){
+        alert("Проверьте правильность введенного email!")
         return;
     }
 
-    if (password != confirmPassword) {
-        alert("Проверьте правильность введенных паролей");
+    if (validate_pass(password) == false){
+        alert("Проверьте правильность введенного пароля!")
+        return;
+    }
+
+    if(validate_field(login) == false){
+        alert("Проверьте правильность введенного логина?");
+        return;
+    }
+
+    if (password != confirmPassword){
+        alert("Проверьте правильность введенных паролей!");
         return;
     }
 
@@ -50,6 +57,8 @@ function register() {
             database_ref.child("users/" + user.uid).set(user_data);
 
             alert("Пользователь создан");
+
+            location.reload();
         })
         .catch(function (error) {
             var error_code = error.code;
@@ -63,8 +72,13 @@ async function login() {
     const email = document.getElementById("email1").value;
     const password = document.getElementById("password1").value;
     console.log(email);
-    if (validate_field(email) == false || validate_pass(password) == false) {
-        alert("Неверные данные");
+    if (validate_field(email) == false) {
+        alert("Проверьте правильность введенного email!");
+        return;
+    }
+
+    if (validate_pass(password) == false) {
+        alert("Проверьте правильность введенного пароля!");
         return;
     }
 
@@ -80,7 +94,7 @@ async function login() {
 
             database_ref.child("users/" + user.uid).update(user_data);
 
-            alert("Ты вошел");
+            alert("Вы успешно вошли в аккаунт!");
 
             // Сохраняем информацию о входе пользователя в localStorage
             localStorage.setItem("isLoggedIn", "true");
