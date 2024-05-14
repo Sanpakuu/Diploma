@@ -178,6 +178,11 @@ nav a:hover {
     text-align: center;
 }
 
+.more-info:hover {
+    color: #b3b3b3;
+    transition: 0.5s ease ;
+}
+
 /* Стили для модального окна */
 .modal {
     display: none; /* Скрыто по умолчанию */

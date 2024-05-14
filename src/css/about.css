@@ -72,11 +72,22 @@ body {
     max-height: 96%;
 }
 
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    
+}
+
+.main {
+    flex-grow: 1;
+}
+
 header {
-    padding-top: 50px;
+    padding-top: 50px; /* Отступ сверху */
+    padding-bottom: 20px; /* Отступ снизу */
     display: flex;
     justify-content: space-between;
-    align-items: center;
     color: white;
 }
 
@@ -123,13 +134,6 @@ nav a:hover {
     border: 3px solid #fff;
 }
 
-.about-us1 {
-    margin-top: 175px;
-    margin-left: 280px;
-    color: #fff;
-    font-size: 45px;
-}
-
 .loga {
     margin-left: 120px;
     margin-top: 10px;
@@ -140,6 +144,7 @@ nav a:hover {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    border-radius: 5%;
 }
 
 .about-us2 {
@@ -150,14 +155,20 @@ nav a:hover {
 
 .about-us22 {
     margin-top: 15px;
+    width: 900px;
+    overflow: hidden;
+    font-size: 30px;
 }
 
 .all {
     display: flex;
+    padding-top: 180px;
 }
 
 .footer {
-    margin-top: 120px;
+    position: fixed; /* Закрепляем футер */
+    bottom: 0; /* Располагаем футер внизу страницы */
+    width: 100%; /* Ширина футера на всю ширину страницы */
     color: white;
     font-size: 20px;
     display: flex;
@@ -197,12 +208,6 @@ nav a:hover {
 
     .list li {
         margin: 10px 0;
-    }
-
-    .about-us1 {
-        margin-left: 10px;
-        margin-top: 20px;
-        text-align: center;
     }
 
     .loga {
