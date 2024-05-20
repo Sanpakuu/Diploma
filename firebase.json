@@ -23,6 +23,22 @@
         "destination": "/html/information/i1(astro).html"
       },
       {
+        "source": "/html/ships",
+        "destination": "/html/information/i2(ships).html"
+      },
+      {
+        "source": "/html/journey",
+        "destination": "/html/information/i3(journey).html"
+      },
+      {
+        "source": "/html/map",
+        "destination": "/html/information/i4(map).html"
+      },
+      {
+        "source": "/html/archive",
+        "destination": "/html/information/i5(archive).html"
+      },
+      {
         "source": "**",
         "destination": "/html/404.html"
       }

@@ -5,19 +5,19 @@ function navigateToPage1() {
 
 function navigateToPage2() {
     // Используйте window.location.href для перехода на другую страницу
-    window.location.href = 'ships';
+    window.location.href = '/ships';
   }  
 
 function navigateToPage3() {
     // Используйте window.location.href для перехода на другую страницу
-    window.location.href = 'journey';
+    window.location.href = '/journey';
   }  
 
 function navigateToPage4() {
     // Используйте window.location.href для перехода на другую страницу
-    window.location.href = 'map';
+    window.location.href = '/map';
   }  
 function navigateToPage5() {
     // Используйте window.location.href для перехода на другую страницу
-    window.location.href = 'archive';
+    window.location.href = '/archive';
   } 
