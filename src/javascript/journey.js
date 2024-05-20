@@ -37,7 +37,7 @@ function hideLoader() {
 
 function navigateToSign() {
     // Используйте window.location.href для перехода на другую страницу
-    window.location.href = "sign";
+    window.location.href = "/html/sign.html";
 }
 
 document.addEventListener('DOMContentLoaded', function() {

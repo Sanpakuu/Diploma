@@ -100,7 +100,7 @@ async function login() {
             localStorage.setItem("isLoggedIn", "true");
 
             // Перенаправляем пользователя на страницу "Личный кабинет"
-            window.location.href = "/cabinet";
+            window.location.href = 'https://diplom-93856.firebaseapp.com/html/cabinet.html';
         })
         .catch(function (error) {
             var error_message = error.message;

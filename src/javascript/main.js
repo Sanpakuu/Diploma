@@ -23,5 +23,13 @@ document.addEventListener('DOMContentLoaded', function() {
 setInterval(shiftWords, 2000);
 
 function Go() {
-    window.location.href = 'discover';
+    window.location.href = '/html/discover.html';
+}
+
+function check_on_sign() {
+    var isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (isLoggedIn === 'true') {
+        window.location.href = "cabinet.html";
+    }
+    else {window.location.href = "sign.html";}
 }

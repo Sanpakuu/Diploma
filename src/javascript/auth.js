@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (isLoggedIn === 'true') {
         // Перенаправляем пользователя на страницу личного кабинета
-        window.location.href = '/cabinet';
+        window.location.href = '/html/cabinet.html';
     }
     if (isLoggedIn === 'false') {
         // Перенаправляем пользователя на страницу входа
-        window.location.href = '/sign';
+        window.location.href = '/html/sign.html';
     }
 });

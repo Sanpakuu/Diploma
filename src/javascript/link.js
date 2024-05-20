@@ -1,6 +1,6 @@
 function navigateToPage1() {
     // Используйте window.location.href для перехода на другую страницу
-    window.location.href = 'astronauts';
+    window.location.href = '/astronauts';
   }
 
 function navigateToPage2() {

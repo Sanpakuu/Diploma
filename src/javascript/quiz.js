@@ -13,7 +13,7 @@ const database = firebase.database();
 
 function navigateToSign() {
   // Используйте window.location.href для перехода на другую страницу
-  window.location.href = "sign";
+  window.location.href = "/html/sign.html";
 }
 function showLoader() {
   document.getElementById("loader-container").style.display = "flex";

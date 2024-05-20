@@ -4,6 +4,6 @@ function anti_auth() {
         localStorage.removeItem('isLoggedIn');
         localStorage.removeItem('uid');
     }
-    window.location.href = "/sign";
+    window.location.href = "/html/sign.html";
 }
 

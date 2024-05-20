@@ -1,0 +1,36 @@
+{
+  "hosting": {
+    "public": "src",
+    "rewrites": [
+      {
+        "source": "/cabinet",
+        "destination": "/html/cabinet.html"
+      },
+      {
+        "source": "/sign",
+        "destination": "/html/sign.html"
+      },
+      {
+        "source": "/main.html",
+        "destination": "/html/main.html"
+      },
+      {
+        "source": "/discover.html",
+        "destination":"/html/discover.html"
+      },
+      {
+        "source": "/astronauts",
+        "destination": "/html/information/i1(astro).html"
+      },
+      {
+        "source": "**",
+        "destination": "/html/404.html"
+      }
+    ],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
