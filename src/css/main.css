@@ -144,3 +144,68 @@ nav a:hover {
 .clickable {
     cursor: pointer;
 }
+
+@media only screen and (max-width: 768px) {
+    .head {
+        padding-top: 20px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav {
+        margin-right: 0;
+        flex-direction: column;
+    }
+
+    nav a {
+        font-size: 16px;
+        margin: 5px 0;
+    }
+
+    .logo {
+        margin: 0;
+        font-size: 28px;
+    }
+
+    .list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .list li {
+        margin: 0 0 15px 0;
+    }
+
+    .left-word, .right-word {
+        margin: 50px 0 0 0;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .center-words {
+        font-size: 24px;
+        margin: 50px 10px;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .left-word, .right-word {
+        font-size: 36px;
+        margin: 30px 0;
+    }
+
+    .center-words {
+        font-size: 18px;
+        margin: 30px 10px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+}

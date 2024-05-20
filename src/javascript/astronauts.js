@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Добавление обработчика события для отображения модального окна
                 astronautDiv.querySelector('.more-info').addEventListener('click', function() {
+                    document.getElementById("modal-content-name").innerText = astronautName;
                     document.getElementById("modal-content-info").innerText = astronautInfo;
                     document.getElementById("modal-content-image").style.backgroundImage = 'url(' + astronautImageURL + ')';
                     document.getElementById("myModal").style.display = "block";

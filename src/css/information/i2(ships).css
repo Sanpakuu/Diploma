@@ -169,3 +169,60 @@ nav a:hover {
     justify-content: center;
     align-items: center;
 }
+
+/* Для экранов шириной до 768px */
+@media only screen and (max-width: 768px) {
+    .logo {
+        font-size: 20px;
+    }
+
+    nav {
+        margin-right: 10px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .list li {
+        margin-bottom: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .ships-container {
+        margin: 10px auto;
+    }
+
+    .ship {
+        width: 90%;
+        height: auto;
+        margin: 20px auto;
+    }
+
+    .sh-name {
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .sh-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .sh-info {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+/* Для экранов шириной до 480px */
+@media only screen and (max-width: 480px) {
+    .logo {
+        font-size: 18px;
+    }
+}
+
