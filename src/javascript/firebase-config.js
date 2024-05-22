@@ -104,8 +104,8 @@ async function login() {
         })
         .catch(function (error) {
             var error_message = error.message;
-
-            alert(error_message);
+            console.log(error_message);
+            alert("Такого аккаунта не существует!(");
         });
 }
 
