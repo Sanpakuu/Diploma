@@ -14,59 +14,58 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const database = firebase.database();
 
-function register() {
+function register(event) {
+    event.preventDefault(); // Предотвращение перезагрузки страницы
+
     const login = document.getElementById("login").value;
     const email = document.getElementById("email2").value;
     const password = document.getElementById("password2").value;
     const confirmPassword = document.getElementById("confirmPassword").value;
 
-
-    if (validate_email(email) == false){
-        alert("Проверьте правильность введенного email!")
+    if (!validate_email(email)) {
+        alert("Проверьте правильность введенного email!");
         return;
     }
 
-    if (validate_pass(password) == false){
-        alert("Проверьте правильность введенного пароля!")
+    if (!validate_pass(password)) {
+        alert("Проверьте правильность введенного пароля!");
         return;
     }
 
-    if(validate_field(login) == false){
+    if (!validate_field(login)) {
         alert("Проверьте правильность введенного логина?");
         return;
     }
 
-    if (password != confirmPassword){
+    if (password !== confirmPassword) {
         alert("Проверьте правильность введенных паролей!");
         return;
     }
 
-    auth
-        .createUserWithEmailAndPassword(email, password)
-        .then(function () {
-            var user = auth.currentUser;
-            var database_ref = database.ref();
+    auth.createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            const database_ref = database.ref();
 
-            var user_data = {
+            const user_data = {
                 login: login,
                 email: email,
                 pass: password,
                 last_login: Date.now(),
             };
 
-            database_ref.child("users/" + user.uid).set(user_data);
-
+            return database_ref.child("users/" + user.uid).set(user_data);
+        })
+        .then(() => {
             alert("Пользователь создан");
-
             location.reload();
         })
-        .catch(function (error) {
-            var error_code = error.code;
-            var error_message = error.message;
-
-            alert(error_message);
+        .catch((error) => {
+            alert("Ошибка: " + error.message);
         });
 }
+
+
 
 async function login() {
     const email = document.getElementById("email1").value;
@@ -100,7 +99,7 @@ async function login() {
             localStorage.setItem("isLoggedIn", "true");
 
             // Перенаправляем пользователя на страницу "Личный кабинет"
-            window.location.href = 'https://diplom-93856.firebaseapp.com/html/cabinet.html';
+            window.location.href = "/cabinet";
         })
         .catch(function (error) {
             var error_message = error.message;

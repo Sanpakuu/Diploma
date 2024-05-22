@@ -256,6 +256,7 @@ nav a:hover {
     background: #ff592a;
     flex-shrink: 0;
     font-size: 25px;
+    color: #fff;
 }
 
 .button:hover {

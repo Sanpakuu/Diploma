@@ -23,19 +23,19 @@
         "destination": "/html/information/i1(astro).html"
       },
       {
-        "source": "/html/ships",
+        "source": "/ships",
         "destination": "/html/information/i2(ships).html"
       },
       {
-        "source": "/html/journey",
+        "source": "/journey",
         "destination": "/html/information/i3(journey).html"
       },
       {
-        "source": "/html/map",
+        "source": "/map",
         "destination": "/html/information/i4(map).html"
       },
       {
-        "source": "/html/archive",
+        "source": "/archive",
         "destination": "/html/information/i5(archive).html"
       },
       {

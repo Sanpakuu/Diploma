@@ -1,135 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Профиль</title>
-    <link rel="stylesheet" href="/css/cabinet.css" />
-    <link rel="stylesheet" href="/css/loader.css" />
-    <link rel="stylesheet" href="/css/animation.css">
-  </head>
-  <body>
-    <div class="all">
-      <div class="content">
-        <header>
-          <div class="logo">Профиль</div>
-          <nav>
-            <ul class="list">
-              <li><a href="discover.html">Исследование</a></li>
-              <li><a href="about.html">О нас</a></li>
-              <li><a href="quiz.html">Викторины</a></li>
-            </ul>
-          </nav>
-        </header>
-        <div id="loader-container">
-          <div id="loader" class="lds-roller" style="display: none">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Профиль</title>
+  <link rel="stylesheet" href="/css/cabinet.css" />
+  <link rel="stylesheet" href="/css/loader.css" />
+  <link rel="stylesheet" href="/css/animation.css">
+</head>
+
+<body>
+  <div class="all">
+    <div class="content">
+      <header>
+        <div class="logo">Профиль</div>
+        <nav>
+          <ul class="list">
+            <li><a href="discover.html">Исследование</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="quiz.html">Викторины</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="loader-container">
+        <div id="loader" class="lds-roller" style="display: none">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <main class="main" style="display: none">
+        <div class="container fadeIn">
+          <div class="self-info">
+            <h1>Личная информация</h1>
+          </div>
+          <div class="user-data">
+            <div class="profile-image-container">
+              <div class="user-image"></div>
+              <div class="edit-image">
+                <input type="file" id="profileImageUpload" accept="image/*" style="display: none" />
+
+                <span id="editImageText">Изменить изображение</span>
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/diplom-93856.appspot.com/o/background%2Fredact.png?alt=media&token=86c54462-ea75-4ed5-a152-183415fae29c"
+                  alt="Edit" id="editImageIcon" style="width: 20px; height: 20px" />
+              </div>
+            </div>
+            <div class="user-info">
+              <div class="user-info1">
+                <ul>
+                  <li class="user" id="id">UID:</li>
+                  <li class="user" id="login">Логин:</li>
+                  <li class="user" id="email">Email:</li>
+                  <li class="user" id="password">
+                    Пароль: <span id="password-text"></span><img
+                      src="https://firebasestorage.googleapis.com/v0/b/diplom-93856.appspot.com/o/background%2Fredact.png?alt=media&token=86c54462-ea75-4ed5-a152-183415fae29c"
+                      alt="Фото" id="password-image" style="margin-left: 10px" width="30px" height="30px" />
+                  </li>
+                </ul>
+              </div>
+              <div class="user-info2">
+                <ul>
+                  <li class="user" id="step-score">
+                    Пройдено этапов путешествия:
+                  </li>
+                  <li class="user" id="quiz-score-1">
+                    Баллы за Викторину №1:
+                  </li>
+                  <li class="user" id="quiz-score-2">
+                    Баллы за Викторину №2:
+                  </li>
+                  <li class="user" id="quiz-score-3">
+                    Баллы за Викторину №3:
+                  </li>
+                  <li class="user" id="quiz-score-4">
+                    Баллы за Викторину №4:
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="button-exit">
+            <button class="exit" onclick="anti_auth()">Выход</button>
           </div>
         </div>
-        <main class="main" style="display: none">
-          <div class="container fadeIn">
-            <div class="self-info">
-              <h1>Личная информация</h1>
-            </div>
-            <div class="user-data">
-              <div class="profile-image-container">
-                <div class="user-image"></div>
-                <div class="edit-image">
-                  <input
-                    type="file"
-                    id="profileImageUpload"
-                    accept="image/*"
-                    style="display: none"
-                  />
-
-                  <span id="editImageText">Изменить изображение</span>
-                  <img
-                    src="https://firebasestorage.googleapis.com/v0/b/diplom-93856.appspot.com/o/background%2Fredact.png?alt=media&token=86c54462-ea75-4ed5-a152-183415fae29c"
-                    alt="Edit"
-                    id="editImageIcon"
-                    style="width: 20px; height: 20px"
-                  />
-                </div>
-              </div>
-              <div class="user-info">
-                <div class="user-info1">
-                  <ul>
-                    <li class="user" id="id">UID:</li>
-                    <li class="user" id="login">Логин:</li>
-                    <li class="user" id="email">Email:</li>
-                    <li class="user" id="password">
-                      Пароль: <span id="password-text"></span
-                      ><img
-                        src="https://firebasestorage.googleapis.com/v0/b/diplom-93856.appspot.com/o/background%2Fredact.png?alt=media&token=86c54462-ea75-4ed5-a152-183415fae29c"
-                        alt="Фото"
-                        id="password-image"
-                        style="margin-left: 10px"
-                        width="30px"
-                        height="30px"
-                      />
-                    </li>
-                  </ul>
-                </div>
-                <div class="user-info2">
-                  <ul>
-                    <li class="user" id="step-score">
-                      Пройдено этапов путешествия:
-                    </li>
-                    <li class="user" id="quiz-score-1">
-                      Баллы за Викторину №1:
-                    </li>
-                    <li class="user" id="quiz-score-2">
-                      Баллы за Викторину №2:
-                    </li>
-                    <li class="user" id="quiz-score-3">
-                      Баллы за Викторину №3:
-                    </li>
-                    <li class="user" id="quiz-score-4">
-                      Баллы за Викторину №4:
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="button-exit">
-              <button class="exit" onclick="anti_auth()">Выход</button>
-            </div>
-          </div>
-        </main>
-        <footer class="footer">
-          <div class="ft">
-            <p>&copy; 2024 Космический музей | Разработано Sanpakuu</p>
-          </div>
-        </footer>
-      </div>
+      </main>
+      <footer class="footer">
+        <div class="ft">
+          <p>&copy; 2024 Космический музей | Разработано Sanpakuu</p>
+        </div>
+      </footer>
     </div>
-    <!-- Модальное окно для смены пароля -->
-    <div id="passwordModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <form id="passwordChangeForm">
-          <label for="oldPassword">Старый пароль:</label>
-          <input type="password" id="oldPassword" name="oldPassword" required />
-          <label for="newPassword">Новый пароль:</label>
-          <input type="password" id="newPassword" name="newPassword" required />
-          <button type="submit" id="button-submit">Сменить пароль</button>
-        </form>
-      </div>
+  </div>
+  <!-- Модальное окно для смены пароля -->
+  <div id="passwordModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form id="passwordChangeForm">
+        <label for="oldPassword">Старый пароль:</label>
+        <input type="password" id="oldPassword" name="oldPassword" required />
+        <label for="newPassword">Новый пароль:</label>
+        <input type="password" id="newPassword" name="newPassword" required />
+        <button type="submit" id="button-submit">Сменить пароль</button>
+      </form>
     </div>
-  </body>
+  </div>
+</body>
 
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 
-  <script src="/javascript/cabinet.js"></script>
-  <script src="/javascript/anti_auth.js"></script>
+<script src="/javascript/cabinet.js"></script>
+<script src="/javascript/anti_auth.js"></script>
+
 </html>

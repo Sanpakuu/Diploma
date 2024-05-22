@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Профиль</title>
   <link rel="stylesheet" href="/css/sign.css" />
-  <link rel="stylesheet" href="/css/animation.css">
+  <link rel="stylesheet" href="/css/animation.css" />
 </head>
 
 <body>
@@ -16,9 +16,9 @@
         <div class="logo">Профиль</div>
         <nav>
           <ul class="list">
-            <li><a href="discover.html">Исследование</a></li>
-            <li><a href="about.html">О нас</a></li>
-            <li><a href="quiz.html">Викторины</a></li>
+            <li><a href="discover">Исследование</a></li>
+            <li><a href="about">О нас</a></li>
+            <li><a href="quiz">Викторины</a></li>
           </ul>
         </nav>
       </header>
@@ -44,19 +44,18 @@
             <div class="sign fadeIn">
               <div class="text">Регистрация</div>
               <div class="vvod">
-                <form action="#" method="get" enctype="multipart/form-data">
+                <form id="registrationForm" action="#" method="post" enctype="multipart/form-data"
+                  onsubmit="register(event)">
                   <p class="tekst">Логин</p>
-                  <input tabindex="1" id="login" type="text" value="" class="vvod-items" />
+                  <input tabindex="1" id="login" type="text" class="vvod-items" />
                   <p class="tekst">Email</p>
-                  <input tabindex="2" id="email2" type="text" name="mail" value="" class="vvod-items" />
+                  <input tabindex="2" id="email2" type="text" name="mail" class="vvod-items" />
                   <p class="tekst">Пароль</p>
-                  <input tabindex="3" id="password2" type="password" value="" class="vvod-items" />
+                  <input tabindex="3" id="password2" type="password" class="vvod-items" />
                   <p class="tekst">Повторите пароль</p>
-                  <input tabindex="4" id="confirmPassword" type="password" value="" class="vvod-items" />
+                  <input tabindex="4" id="confirmPassword" type="password" class="vvod-items" />
                   <div class="batton">
-                    <button class="button-sign" onclick="register()">
-                      <a href="#">Регистрация</a>
-                    </button>
+                    <button type="submit" class="button-sign">Регистрация</button>
                   </div>
                 </form>
               </div>
