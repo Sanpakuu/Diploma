@@ -28,7 +28,7 @@ function register(event) {
     }
 
     if (!validate_pass(password)) {
-        alert("Проверьте правильность введенного пароля!");
+        alert("Проверьте правильность введенного пароля! (длина минимум 6 символов)");
         return;
     }
 
@@ -71,13 +71,14 @@ async function login() {
     const email = document.getElementById("email1").value;
     const password = document.getElementById("password1").value;
     console.log(email);
+    console.log(password);
     if (validate_field(email) == false) {
         alert("Проверьте правильность введенного email!");
         return;
     }
 
     if (validate_pass(password) == false) {
-        alert("Проверьте правильность введенного пароля!");
+        alert("Проверьте правильность введенного пароля! (длина минимум 6 символов)");
         return;
     }
 

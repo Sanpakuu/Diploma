@@ -19,6 +19,10 @@
         "destination":"/html/discover.html"
       },
       {
+        "source": "/about.html",
+        "destination":"/html/about.html"
+      },
+      {
         "source": "/astronauts",
         "destination": "/html/information/i1(astro).html"
       },
